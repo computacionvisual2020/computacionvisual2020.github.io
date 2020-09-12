@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+	<script src="p5/sketch1.js"></script>
+
+	<title>Animated Page Transition #2 | CodyHouse</title>
+</head>
+
+<body>
+	<nav class="cd-side-navigation">
+		<ul>
+			<li>
+				<a href="#0" data-menu="index">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polygon fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" points="12,2 3,10 3,23 9,23 9,16 15,16 15,23 21,23 21,10 "
+								stroke-linejoin="miter"></polygon>
+						</g>
+					</svg>
+					Intro
+				</a>
+			</li>
+
+			<li>
+				<a class="selected" href="#0" data-menu="project1">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+								stroke-linejoin="miter"></polyline>
+							<rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+						</g>
+					</svg>
+					Proyecto 1
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" data-menu="projects">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<rect x="1" y="1" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="22" stroke-linejoin="miter"></rect>
+							<rect data-color="color-2" x="5" y="5" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+								stroke-linejoin="miter"></rect>
+							<rect data-color="color-2" x="14" y="5" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+								stroke-linejoin="miter"></rect>
+							<rect data-color="color-2" x="5" y="14" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+								stroke-linejoin="miter"></rect>
+							<rect data-color="color-2" x="14" y="14" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+								stroke-linejoin="miter"></rect>
+						</g>
+					</svg>
+					Projects
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" data-menu="contact">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" points=" 19,7 12,14 5,7 "
+								stroke-linejoin="miter"></polyline>
+							<rect x="1" y="3" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="18" stroke-linejoin="miter"></rect>
+							<line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" x1="7" y1="15" x2="5" y2="17"
+								stroke-linejoin="miter"></line>
+							<line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" x1="17" y1="15" x2="19" y2="17"
+								stroke-linejoin="miter"></line>
+						</g>
+					</svg>
+					</svg>
+					Contact
+				</a>
+			</li>
+		</ul>
+	</nav> <!-- .cd-side-navigation -->
+
+	<main class="cd-main">
+		<section class="cd-section project1 visible">
+			<header>
+				<div class="cd-title">
+					<h2>Proyecto 1</h2>
+					<span>Some text here</span>
+				</div>
+
+				<a href="#project1-content" class="cd-scroll">Scroll Down</a>
+			</header>
+
+			<div class="cd-content" id="project1-content">
+				<center>
+					<div id="image1" style="display: inline;"></div>
+					<div id="image2" style="display: inline;"></div>
+
+					<select id="kernel1" style="display: block;">
+						<option value="blur" selected>blur</option>
+						<option value="emboss">emboss</option>
+						<option value="identity">identity</option>
+						<option value="leftSobel">left sobel</option>
+						<option value="rightSobel">right sobel</option>
+						<option value="topSobel">top sobel</option>
+						<option value="bottomSobel">bottom sobel</option>
+						<option value="outline1">outline 1</option>
+						<option value="outline2">outline 2</option>
+						<option value="outline3">outline 3</option>
+						<option value="sharpen">sharpen</option>
+					</select>
+
+					<div id="image3" style="display: inline;"></div>
+					<div id="image4" style="display: inline;"></div>
+
+					<select id="kernel2" style="display: block;"></select>
+
+				</center>
+
+				<script>
+					const imagePath1 = 'assets/Vd-Orig.png';
+					const imageWidth1 = 100;
+					const imageHeight1 = 100;
+
+					const imagePath3 = 'assets/Fire_breathing_2_Luc_Viatour.jpg';
+					const imageWidth3 = 800 * 0.5;
+					const imageHeight3 = 538 * 0.5;
+
+					new p5(s1(imagePath1, imageWidth1, imageHeight1), 'image1');
+					let image2 = new p5(s2(imagePath1, imageWidth1, imageHeight1), 'image2');
+
+					new p5(s1(imagePath3, imageWidth3, imageHeight3), 'image3');
+					let image4 = new p5(s2(imagePath3, imageWidth3, imageHeight3), 'image4');
+
+					const inputKernel1 = document.getElementById('kernel1');
+					const inputKernel2 = document.getElementById('kernel2');
+
+					inputKernel2.innerHTML = inputKernel1.innerHTML;
+
+					inputKernel1.addEventListener('change', (event) => {
+						effect = kernels[inputKernel1.value];
+						image2.setup();
+					});
+
+					inputKernel2.addEventListener('change', (event) => {
+						effect = kernels[inputKernel2.value];
+						image4.setup();
+					});
+				</script>
+
+			</div> <!-- .cd-content -->
+		</section> <!-- .cd-section -->
+	</main> <!-- .cd-main -->
+
+	<div id="cd-loading-bar" data-scale="1" class="project1"></div> <!-- lateral loading bar -->
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+
+</html>

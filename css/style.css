@@ -194,7 +194,7 @@ Navigation
   background: #313131;
   overflow: hidden;
 }
-.cd-section.services header {
+.cd-section.project1 header {
   background-color: #d35657;
 }
 .cd-section.projects header {
@@ -409,7 +409,7 @@ Navigation
 #cd-loading-bar.index {
   background-color: #313131;
 }
-#cd-loading-bar.services {
+#cd-loading-bar.project1 {
   background-color: #d35657;
 }
 #cd-loading-bar.projects {
