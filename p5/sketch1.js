@@ -57,7 +57,7 @@ const kernels = {
     ],
 }
 
-let effect = kernels.blur;
+let effect = kernels.top;
 
 // Sketch #1
 const s1 = (imgPath, imgWidth, imgHeight) => {
@@ -118,9 +118,9 @@ const s2 = (imgPath, imgWidth, imgHeight) => {
 
                         for (let a = 0, i = x - 1; a < 3; a++, i++) {
                             for (let b = 0, j = y - 1; b < 3; b++, j++) {
-                                convRed += imgRed[i][j] * effect[a][b];
-                                convGreen += imgGreen[i][j] * effect[a][b];
-                                convBlue += imgBlue[i][j] * effect[a][b];
+                                convRed += imgRed[i][j] * effect[b][a];
+                                convGreen += imgGreen[i][j] * effect[b][a];
+                                convBlue += imgBlue[i][j] * effect[b][a];
                             }
                         }
 
