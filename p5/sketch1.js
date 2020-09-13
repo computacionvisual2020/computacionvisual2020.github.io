@@ -57,7 +57,7 @@ const kernels = {
     ],
 }
 
-let effect = kernels.top;
+let effect = kernels.blur;
 
 // Sketch #1
 const s1 = (imgPath, imgWidth, imgHeight) => {
