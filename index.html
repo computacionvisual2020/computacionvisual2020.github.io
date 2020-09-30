@@ -11,32 +11,11 @@
 
     <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
 
     <title>Computación Visual | 2020-2</title>
 </head>
-
-<style>
-    .presentation {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        gap: 1rem;
-        grid-column: 2/3;
-        margin: 1vw
-    }
-
-    .integrantes {
-        align-self: center;
-        grid-column: 2/3;
-    }
-
-    .image {
-        grid-column: 3/4;
-        position: relative;
-        width: 40vw;
-        height: 70vh;
-    }
-</style>
 
 <body>
     <nav class="cd-side-navigation">
@@ -52,7 +31,7 @@
                                 stroke-linejoin="miter"></polygon>
                         </g>
                     </svg>
-                    Introducción
+                    Inicio
                 </a>
             </li>
 
@@ -133,46 +112,107 @@
         <section class="cd-section index visible">
             <header>
                 <div class="cd-title">
-
-                    <div class="presentation">
-                        <div class="integrantes">
-                            <h2>Computación Visual<br/>2020-2</h2>
-                            <h1>INTEGRANTES</h1>
-                            <div>
-                                Felipe Pieschacon
-                                <br>
-                                Juan Monterrosa
-                                <br>
-                                Miguel Medellin
-                                <br>
-                                Tom Perez
-                            </div>
-                        </div>
-                        <div class="image">
-                            <img height='100%' width='100%' x='0%' y='0%' src="img/grimIcon.svg" />
-                        </div>
-                    </div>
-
-                </div>
-
+                    <h2>Computación Visual</h2>
+                    <span>Universidad Nacional de Colombia</span>
                 </div>
 
                 <a href="#index-content" class="cd-scroll">Scroll Down</a>
             </header>
-
             <div class="cd-content" id="index-content">
-                <h1 style="text-align: center">ACERCA DE</h1>
                 <p>
-                    Esta página está destinada para la entrega de proyectos correspondientes para la clase Computación
-                    Visual del semestre 2020-2 por parte del grupo compuesto por Felipe Pieschacon, Juan Monterrosa, Miguel
-                    Medellin, y Tom Perez de la Universidad Nacional de Colombia.
+                    Esta página está destinada para la entrega de proyectos correspondientes a la clase Computación
+                    Visual del semestre 2020-2 de la Universidad Nacional de Colombia.
                 </p>
+                <h1 style="text-align: center">INTEGRANTES</h1>
+                <div class="container">
 
-                <h1 style="text-align: center">AGRADECIMIENTOS A TERCEROS</h1>
+                    <div class="card-wrapper">
+
+                        <div class="card profile">
+
+                            <div class="card-image profile-img">
+                                <img src="img/felipe.jpg" alt="profile">
+                            </div>
+                            <div class="details">
+                                <h2> Felipe Pieschacon
+                                    <br>
+                                    <a class="job-title" href="https://github.com/fpieschaconr">
+                                        <img src="img/gitlogo.svg" alt="git">
+                                        <span>fpieschaconr</span>
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div><!-- END box wrapper -->
+                    <div class="card-wrapper">
+
+                        <div class="card profile">
+
+                            <div class="card-image profile-img">
+                                <img src="img/FotoHV.jpg" alt="profile">
+                            </div>
+                            <div class="details">
+                                <h2> Juan Monterrosa
+                                    <br>
+
+                                    <a class="job-title" href="https://github.com/jcmonterrosas">
+                                        <img src="img/gitlogo.svg" alt="git">
+                                        <span>jcmonterrosas</span>
+                                    </a>
+                                    <!-- <span class="job-title" >jcmonterrosas</span> -->
+                                </h2>
+                            </div>
+                        </div>
+                    </div><!-- END box wrapper -->
+                    <div class="card-wrapper">
+
+                        <div class="card profile">
+
+                            <div class="card-image profile-img medellin">
+                                <img src="img/medellin.jpg" alt="profile">
+                            </div>
+                            <div class="details">
+                                <h2> Miguel Medellin
+                                    <br>
+                                    <a class="job-title" href="https://github.com/Chranium">
+                                        <img src="img/gitlogo.svg" alt="git">
+                                        <span>chranium</span>
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div><!-- END box wrapper -->
+                    <div class="card-wrapper">
+
+                        <div class="card profile">
+
+                            <div class="card-image profile-img">
+                                <img src="img/tpereza.jpg" alt="profile">
+                            </div>
+                            <div class="details">
+                                <h2> Tom Perez
+                                    <br>
+                                    <a class="job-title" href="https://github.com/tpereza">
+                                        <img src="img/gitlogo.svg" alt="git">
+                                        <span>tpereza</span>
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div><!-- END box wrapper -->
+                </div><!-- END container -->
+                <h1 style="text-align: center">USO DE TERCEROS</h1>
+                <br>
                 <p>
-                    Plantilla para esta página obtenida de: <a href="https://codyhouse.co/gem/animated-page-transition-2">CodyHouse</a>
+                    Plantilla para esta página obtenida de:
+                    <a href="https://codyhouse.co/gem/animated-page-transition-2">CodyHouse</a>
+                    <br>
+                    Recursos graficos:
+                    <a href="https://codepen.io/2975/pen/QrZpoa">Cards</a>
                 </p>
-
+                <div class="image">
+                    <img height='100%' width='100%' src="img/grimIcon.svg" />
+                </div>
             </div> <!-- .cd-content -->
         </section> <!-- .cd-section -->
     </main> <!-- .cd-main -->
