@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/project1.css">
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
 	<script src="p5/sketch1.js"></script>
@@ -112,7 +113,7 @@
 			<header>
 				<div class="cd-title">
 					<h2>Proyecto 1</h2>
-					<span>Some text here</span>
+					<span>Efectos</span>
 				</div>
 
 				<a href="#project1-content" class="cd-scroll">Scroll Down</a>
@@ -120,27 +121,34 @@
 
 			<div class="cd-content" id="project1-content">
 				<center>
-					<div id="image1" style="display: inline;"></div>
-					<div id="image2" style="display: inline;"></div>
+					<div>
+						<div id="image1" style="display: inline;"></div>
+						<div id="image2" style="display: inline;"></div>
+					</div>
 
-					<select id="kernel1" style="display: block;">
-						<option value="blur" selected>blur</option>
-						<option value="emboss">emboss</option>
-						<option value="identity">identity</option>
-						<option value="leftSobel">left sobel</option>
-						<option value="rightSobel">right sobel</option>
-						<option value="topSobel">top sobel</option>
-						<option value="bottomSobel">bottom sobel</option>
-						<option value="outline1">outline 1</option>
-						<option value="outline2">outline 2</option>
-						<option value="outline3">outline 3</option>
-						<option value="sharpen">sharpen</option>
-					</select>
+						<select id="kernel1" style="display: block; margin: 3vh 0;">
+							<option value="" disabled>Efecto</option>
+							<option value="blur">Blur</option>
+							<option value="emboss">Emboss</option>
+							<option value="identity">Identity</option>
+							<option value="leftSobel">Left sobel</option>
+							<option value="rightSobel">Right sobel</option>
+							<option value="topSobel">Top sobel</option>
+							<option value="bottomSobel">Bottom sobel</option>
+							<option value="outline1">Outline 1</option>
+							<option value="outline2">Outline 2</option>
+							<option value="outline3">Outline 3</option>
+							<option value="sharpen">Sharpen</option>
+						</select>
 
-					<div id="image3" style="display: inline;"></div>
-					<div id="image4" style="display: inline;"></div>
 
-					<select id="kernel2" style="display: block;"></select>
+					<div>
+						<div id="image3" style="display: inline;"></div>
+						<div id="image4" style="display: inline;"></div>
+					</div>
+
+
+						<select id="kernel2" style="display: block; margin: 3vh 0;"></select>
 
 				</center>
 
