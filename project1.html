@@ -13,6 +13,7 @@
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
 	<script src="p5/sketch1.js"></script>
+	<script src="p5/taller1_video.js"></script>
 
 	<title>Animated Page Transition #2 | CodyHouse</title>
 </head>
@@ -150,6 +151,11 @@
 
 						<select id="kernel2" style="display: block; margin: 3vh 0;"></select>
 
+					<div>
+						<div id="video1" style="display: inline;"></div>
+						<div id="video2" style="display: inline;"></div>
+					</div>
+
 				</center>
 
 				<script>
@@ -160,6 +166,10 @@
 					const imagePath3 = 'assets/Fire_breathing_2_Luc_Viatour.jpg';
 					const imageWidth3 = 800 * 0.5;
 					const imageHeight3 = 538 * 0.5;
+
+					const videoPath1 = 'assets/video_demo.mp4';
+					const videoWidth1 = 1280 * 0.5;
+					const videoHeight1 = 720 * 0.5;
 
 					new p5(s1(imagePath1, imageWidth1, imageHeight1), 'image1');
 					let image2 = new p5(s2(imagePath1, imageWidth1, imageHeight1), 'image2');
@@ -181,6 +191,10 @@
 						effect = kernels[inputKernel2.value];
 						image4.setup();
 					});
+
+					new p5(normalVideo(videoPath1, videoWidth1, videoHeight1), 'video1');
+					new p5(fpsVideo(videoPath1, videoWidth1, videoHeight1), 'video2');
+
 				</script>
 
 			</div> <!-- .cd-content -->
