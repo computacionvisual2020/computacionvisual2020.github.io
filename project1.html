@@ -121,6 +121,45 @@
 			</header>
 
 			<div class="cd-content" id="project1-content">
+				<div style="text-align: justify;">
+					<p>
+						El núcleo (kernel) de imagen es una matriz que se utiliza para aplicar efectos sobre un archivo
+						base. Los efectos pueden ser desenfocar, afilar, delinear, o grabar en relieve, entre otros.
+						También se utilizan en el aprendizaje automático para la extracción de características en la
+						imagen. En dicho proceso se conoce como “convolución”. Convolución es el proceso de agregar cada
+						elemento de la imagen a sus vecinos locales, ponderados por el núcleo. Esto está relacionado con
+						una forma de convolución matemática.
+						<br>
+						Algunos de los efectos consisten en:
+					</p>
+					<ul>
+						<li>Desenfocar: resultado de desenfocar una imagen mediante una función gaussiana,
+							reduce el ruido
+							de la imagen y reduce los detalles.</li>
+						<li>Desenfocar: resultado de desenfocar una imagen mediante una función gaussiana, reduce el
+							ruido
+							de la imagen y reduce los detalles.</li>
+						<li>Delinear: identifica puntos en una imagen digital en los que el brillo de la imagen cambia
+							bruscamente o tiene discontinuidades.</li>
+						<li>Grabar en relieve: cada píxel de una imagen se reemplaza por un resaltado o una sombra,
+							dependiendo de los límites claros / oscuros de la imagen original.</li>
+						<li>Afilar: mejora y mantiene el brillo en las regiones de cambio rápido; principalmente bordes.
+						</li>
+					</ul>
+					<p>
+						Para aplicar los efectos sobre las imágenes presentadas, su usó el paquete p5.js de JavaScript,
+						mediante el cual se hace un proceso iterativo en el que se opera sobre cada pixel y sus vecinos
+						inmediatos con el núcleo del filtro deseado para obtener el nuevo valor de cada pixel. En el
+						programa, se crearon funciones propias donde se modifica cada valor RGB de los pixeles y se
+						actualiza en tiempo real el resultado.
+						Las imágenes de ejemplo fueron tomadas de Wikipedia:
+						<br>
+						<a href=" https://en.wikipedia.org/wiki/Kernel_(image_processing)">Animal </a>
+						<br>
+						<a href=" https://en.wikipedia.org/wiki/HSL_and_HSV">Fuego</a>
+					</p>
+				</div>
+
 				<center>
 					<div>
 						<div id="image1" style="display: inline;"></div>
@@ -151,11 +190,31 @@
 						<div id="image4" style="display: inline;"></div>
 					</div>
 
-
 					<select id="kernel2" style="display: block; margin: 3vh 0;"></select>
+					<br>
+					<p style="text-align: justify;">
+						El objetivo principal de este taller es realizar operaciones para analisis de imagenes y videos,
+						en esta ocuacion,
+						haciendo uso de la libreria para JavaScript "P5.js".
+					</p>
+					<p style="text-align: justify;">
+						En primera instancia hicimos la conversión a escala de grises de las imágenes en
+						tiempo real, esto lo hicimos de cuatro formas distintas average RGB, Luma 240, Luma 601 y Luma
+						709, en las
+						imágenes luego de aplicarse cualquiera de estas operaciones se puede apreciar un histograma que
+						muestra la frecuencia de los pixeles en la imagen, se puede realizar la segmentación escogiendo
+						un rango sobre el histograma, aquí solo se mostraran los pixeles que se encuentran dentro del
+						rango y los demás se dejaran de color blanco, esto mismo se realizo para las demas mascaras de
+						convolucion, mencionadas
+						anteriormente.
+					</p>
+					<p style="text-align: justify;">
+						Para las operaciones realizadas en video, se puede medir su eficiencia computacional,
+						encontrandose en un promedio de 60fps el video original. 
+					</p>
 
 					<div>
-						<div id="video1" style="display: inline;"></div>
+						<div id="video1" style="display: inherit;"></div>
 					</div>
 					<div>
 						<div id="video2" style="display: inline;"></div>
@@ -164,6 +223,28 @@
 					<select id="kernel3" style="display: block; margin: 3vh 0;"></select>
 
 				</center>
+				<h1 style="text-align: center">REFERENCIAS</h1>
+				<br>
+				<p>
+					Convoluciones y efectos:
+					<br>
+					<a href="https://es.wikipedia.org/wiki/Modelo_de_color_HSV">Modelo de color HSV</a>
+					<br>
+					<a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Disadvantages">HSL and HSV</a>
+					<br>
+					Histograma y segmentación
+					<br>
+					<a href="https://en.wikipedia.org/wiki/Image_histogram">Image histogram</a>
+					<br>
+					<a href="https://en.wikipedia.org/wiki/Image_segmentation">Image segmentation</a>
+					<br>
+					<a href="https://processing.org/examples/histogram.html">Processing histogram example</a>
+					<br>
+					<a href="https://www.analyticsvidhya.com/blog/2019/04/introduction-image-segmentation-techniques-python/">Segmentation</a>
+					<br>
+					<a href="https://es.wikipedia.org/wiki/M%C3%A9todo_del_valor_umbral">Método del valor umbral</a>
+                    
+				</p>
 
 				<script>
 					const imagePath1 = 'assets/Vd-Orig.png';
