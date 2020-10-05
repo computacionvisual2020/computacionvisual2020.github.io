@@ -153,8 +153,12 @@
 
 					<div>
 						<div id="video1" style="display: inline;"></div>
+					</div>
+					<div>
 						<div id="video2" style="display: inline;"></div>
 					</div>
+
+					<select id="kernel3" style="display: block; margin: 3vh 0;"></select>
 
 				</center>
 
@@ -193,7 +197,16 @@
 					});
 
 					new p5(normalVideo(videoPath1, videoWidth1, videoHeight1), 'video1');
-					new p5(fpsVideo(videoPath1, videoWidth1, videoHeight1), 'video2');
+					let video2 = new p5(fpsVideo(videoPath1, videoWidth1, videoHeight1), 'video2');
+
+					const inputKernel3 = document.getElementById('kernel3');
+
+					inputKernel3.innerHTML = inputKernel1.innerHTML;
+
+					inputKernel3.addEventListener('change', (event) => {
+						effect = kernels[inputKernel3.value];
+
+					});
 
 				</script>
 
