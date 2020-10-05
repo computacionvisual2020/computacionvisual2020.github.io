@@ -19,9 +19,12 @@ const fpsVideo = (videoPath, videoWidth, videoHeight) => {
             vid.loop();
             vid.hide();
             sketch.noStroke();
-            sketch.frameRate(2);
+            sketch.frameRate(10000);
         }
         sketch.draw = () => {
+            imgRed = [];
+            imgGreen = [];
+            imgBlue = [];
             sketch.background(0);
             vid.loadPixels();
             sketch.loadPixels();
@@ -32,7 +35,7 @@ const fpsVideo = (videoPath, videoWidth, videoHeight) => {
                 imgBlue.push([]);
 
                 for (let y = 0; y < sketch.height; y++) {
-                    let i = (x + y * sketch.width) * 4;
+                    let i = ((y*sketch.width)+x)*4;
                     imgRed[a].push(vid.pixels[i]);
                     imgGreen[a].push(vid.pixels[i + 1]);
                     imgBlue[a].push(vid.pixels[i + 2]);
@@ -41,7 +44,7 @@ const fpsVideo = (videoPath, videoWidth, videoHeight) => {
 
             for (let x = 0; x < sketch.width; x++) {
                 for (let y = 0; y < sketch.height; y++) {
-                    let k = (x + y * sketch.width) * 4;
+                    let k = ((y*sketch.width)+x)*4;
 
                     if (!(x === 0 || x === sketch.width - 1 || y === 0 || y === sketch.height - 1)) {
                         let convRed = 0;
@@ -65,12 +68,18 @@ const fpsVideo = (videoPath, videoWidth, videoHeight) => {
             }
             sketch.updatePixels();
             sketch.textSize(20);
+            sketch.fill(255,255,255);
             sketch.text("Average Frame Rate: " + avg,
-                videoWidth / 2, videoHeight - 10);
-            if (time % Math.round(vid.duration()) === Math.round(vid.time() - 1)) {
-                time++;
-                frames += sketch.frameRate();
-                avg = frames / time;
+                videoWidth / 3, videoHeight - 20);
+            if (time === Math.round(vid.time() - 1)) {
+                if (frames<1000000) {
+                    time++;
+                    frames += sketch.frameRate();
+                    avg = frames / time;
+                }
+            }else if(Math.round(vid.time())===0){
+                time=0;
+                frames=0;
             }
         }
 
@@ -85,7 +94,7 @@ const normalVideo = (videoPath, videoWidth, videoHeight) => {
         let avg = 0;
 
         sketch.setup = () => {
-            sketch.createCanvas(videoWidth, 100);
+            sketch.createCanvas(videoWidth, 25);
             vid = sketch.createVideo(videoPath);
             vid.size(videoWidth, videoHeight);
             vid.loop();
@@ -94,12 +103,18 @@ const normalVideo = (videoPath, videoWidth, videoHeight) => {
         sketch.draw = () => {
             sketch.clear();
             sketch.textSize(20);
+            sketch.fill(0,0,0);
             sketch.text("Average Frame Rate: " + avg,
-                videoWidth / 2, 100);
-            if (time % Math.round(vid.duration()) === Math.round(vid.time() - 1)) {
-                time++;
-                frames += sketch.frameRate();
-                avg = frames / time;
+                videoWidth / 3, 25);
+            if (time === Math.round(vid.time() - 1)) {
+                if (frames<1000000) {
+                    time++;
+                    frames += sketch.frameRate();
+                    avg = frames / time;
+                }
+            }else if(Math.round(vid.time())===0){
+                time=0;
+                frames=0;
             }
 
         }
