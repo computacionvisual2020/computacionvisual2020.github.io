@@ -4,11 +4,17 @@ const fpsVideo = (videoPath, videoWidth, videoHeight) => {
         let imgRed = [];
         let imgGreen = [];
         let imgBlue = [];
+        let time = 0;
+        let frames = 0;
+        let avg = 0;
+
+        sketch.preload = () => {
+            vid = sketch.createVideo(videoPath);
+        }
 
         sketch.setup = () => {
             sketch.createCanvas(videoWidth, videoHeight);
             sketch.pixelDensity(1);
-            vid = sketch.createVideo(videoPath);
             vid.size(videoWidth, videoHeight);
             vid.loop();
             vid.hide();
@@ -58,8 +64,13 @@ const fpsVideo = (videoPath, videoWidth, videoHeight) => {
                 }
             }
             sketch.updatePixels();
-            sketch.text("Frame Rate: " + Math.round(sketch.frameRate()),
-                videoWidth / 2, videoHeight);
+            sketch.text("Average Frame Rate: " + avg,
+                videoWidth / 2, videoHeight-10);
+            if (time%Math.round(vid.duration())===Math.round(vid.time()-1)){
+                time++;
+                frames+=sketch.frameRate();
+                avg = frames/time;
+            }
         }
 
     }
@@ -68,17 +79,27 @@ const fpsVideo = (videoPath, videoWidth, videoHeight) => {
 const normalVideo = (videoPath, videoWidth, videoHeight) => {
     return (sketch) => {
         let vid;
+        let time = 0;
+        let frames = 0;
+        let avg = 0;
 
         sketch.setup = () => {
             sketch.createCanvas(videoWidth, 100);
             vid = sketch.createVideo(videoPath);
             vid.size(videoWidth, videoHeight);
             vid.loop();
+            sketch.frameRate(1000);
         }
         sketch.draw = () => {
             sketch.clear();
-            sketch.text("Frame Rate: " + Math.round(sketch.frameRate()),
+            sketch.text("Average Frame Rate: " + avg,
                 videoWidth / 2, 100);
+            if (time%Math.round(vid.duration())===Math.round(vid.time()-1)){
+                time++;
+                frames+=sketch.frameRate();
+                avg = frames/time;
+            }
+
         }
 
     }
