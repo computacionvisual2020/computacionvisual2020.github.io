@@ -173,7 +173,7 @@ const s2 = (imgPath, imgWidth, imgHeight) => {
                         }
 
                         else if (effect == kernels.luma240) {
-                            let avgPixel = parseInt((0.212 * convRed + 0.701 * convGreen + 0.087 * convBlue) / 3);
+                            let avgPixel = parseInt((0.212 * convRed + 0.701 * convGreen + 0.087 * convBlue));
 
                             sketch.pixels[k] = avgPixel;
                             sketch.pixels[k + 1] = avgPixel;
@@ -181,7 +181,7 @@ const s2 = (imgPath, imgWidth, imgHeight) => {
                         }
 
                         else if (effect == kernels.luma601) {
-                            let avgPixel = parseInt((0.2989 * convRed + 0.5870 * convGreen + 0.1140 * convBlue) / 3);
+                            let avgPixel = parseInt((0.2989 * convRed + 0.5870 * convGreen + 0.1140 * convBlue));
 
                             sketch.pixels[k] = avgPixel;
                             sketch.pixels[k + 1] = avgPixel;
@@ -189,7 +189,7 @@ const s2 = (imgPath, imgWidth, imgHeight) => {
                         }
 
                         else if (effect == kernels.luma709) {
-                            let avgPixel = parseInt((0.2126 * convRed + 0.7152 * convGreen + 0.0722 * convBlue) / 3);
+                            let avgPixel = parseInt((0.2126 * convRed + 0.7152 * convGreen + 0.0722 * convBlue));
 
                             sketch.pixels[k] = avgPixel;
                             sketch.pixels[k + 1] = avgPixel;
