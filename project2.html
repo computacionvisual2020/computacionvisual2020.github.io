@@ -7,21 +7,21 @@
 
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
-    <link rel="icon" href="img/grimIcon.svg">
-
     <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/project1.css">
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+    <script src="p5/sketch2.js"></script>
 
-    <title>Computación Visual | 2020-2</title>
+    <title>Animated Page Transition #2 | CodyHouse</title>
 </head>
 
 <body>
     <nav class="cd-side-navigation">
         <ul>
             <li>
-                <a href="#0" class="selected" data-menu="index">
+                <a href="#0" data-menu="index">
                     <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
                         viewBox="0 0 24 24">
@@ -31,7 +31,7 @@
                                 stroke-linejoin="miter"></polygon>
                         </g>
                     </svg>
-                    Inicio
+                    Intro
                 </a>
             </li>
 
@@ -57,25 +57,25 @@
             </li>
 
             <li>
-				<a href="#0" data-menu="project2">
-					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
-						viewBox="0 0 24 24">
-						<g transform="translate(0, 0)">
-							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
-								stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
-								stroke-linejoin="miter"></polyline>
-							<rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
-								stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
-							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
-								stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
-							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
-								stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
-						</g>
-					</svg>
-					Proyecto 2
-				</a>
-			</li>
+                <a class="selected" href="#0" data-menu="project2">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+                                stroke-linejoin="miter"></polyline>
+                            <rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+                            <line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+                            <line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+                        </g>
+                    </svg>
+                    Proyecto 2
+                </a>
+            </li>
 
             <li>
                 <a href="#0" data-menu="projects">
@@ -99,7 +99,7 @@
                                 stroke-linejoin="miter"></rect>
                         </g>
                     </svg>
-                    Proyecto 2
+                    Projects
                 </a>
             </li>
 
@@ -123,124 +123,66 @@
                         </g>
                     </svg>
                     </svg>
-                    Proyecto 3
+                    Contact
                 </a>
             </li>
         </ul>
     </nav> <!-- .cd-side-navigation -->
 
     <main class="cd-main">
-        <section class="cd-section index visible">
+        <section class="cd-section project1 visible">
             <header>
                 <div class="cd-title">
-                    <h2>Computación Visual</h2>
-                    <span>Universidad Nacional de Colombia</span>
+                    <h2>Proyecto 2</h2>
+                    <span>Ilusiones opticas</span>
                 </div>
-              
-                <a href="#index-content" class="cd-scroll">Scroll Down</a>
+
+                <a href="#project2-content" class="cd-scroll">Scroll Down</a>
             </header>
-            <div class="cd-content" id="index-content">
-                <h1 style="text-align: center">ACERCA DE</h1>
-                <br>
-                <p>
-                    Esta página está destinada para la entrega de proyectos correspondientes a la clase Computación
-                    Visual del semestre 2020-2 de la Universidad Nacional de Colombia.
-                </p>
-                <h1 style="text-align: center">INTEGRANTES</h1>
-                <div class="container">
 
-                    <div class="card-wrapper">
-
-                        <div class="card profile">
-
-                            <div class="card-image profile-img">
-                                <img src="img/felipe.jpg" alt="profile">
-                            </div>
-                            <div class="details">
-                                <h2> Felipe Pieschacon
-                                    <br>
-                                    <a class="job-title" href="https://github.com/fpieschaconr">
-                                        <img src="img/gitlogo.svg" alt="git">
-                                        <span>fpieschaconr</span>
-                                    </a>
-                                </h2>
-                            </div>
+            <div class="cd-content" id="project2-content">
+                <div style="text-align: justify;">
+                    <center>
+                        <h1 style="text-align: center"> Scintillating Grid Illusion</h1>
+                        <br>
+                        <div>
+                            <div id="illusion1" style="display: inline;"></div>
                         </div>
-                    </div><!-- END box wrapper -->
-                    <div class="card-wrapper">
 
-                        <div class="card profile">
-
-                            <div class="card-image profile-img">
-                                <img src="img/FotoHV.jpg" alt="profile">
-                            </div>
-                            <div class="details">
-                                <h2> Juan Monterrosa
-                                    <br>
-
-                                    <a class="job-title" href="https://github.com/jcmonterrosas">
-                                        <img src="img/gitlogo.svg" alt="git">
-                                        <span>jcmonterrosas</span>
-                                    </a>
-                                    <!-- <span class="job-title" >jcmonterrosas</span> -->
-                                </h2>
-                            </div>
+                        <br>
+                        <h1 style="text-align: center"> Ebbinghaus Illusion</h1>
+                        <br>
+                        <div>
+                            <div id="illusion2" style="display: inline;"></div>
                         </div>
-                    </div><!-- END box wrapper -->
-                    <div class="card-wrapper">
 
-                        <div class="card profile">
-
-                            <div class="card-image profile-img medellin">
-                                <img src="img/medellin.jpg" alt="profile">
-                            </div>
-                            <div class="details">
-                                <h2> Miguel Medellin
-                                    <br>
-                                    <a class="job-title" href="https://github.com/Chranium">
-                                        <img src="img/gitlogo.svg" alt="git">
-                                        <span>chranium</span>
-                                    </a>
-                                </h2>
-                            </div>
+                        <br>
+                        <h1 style="text-align: center"> Moving Dots Illusion</h1>
+                        <br>
+                        <div>
+                            <div id="illusion3" style="display: inline;"></div>
                         </div>
-                    </div><!-- END box wrapper -->
-                    <div class="card-wrapper">
 
-                        <div class="card profile">
-
-                            <div class="card-image profile-img">
-                                <img src="img/tpereza.jpg" alt="profile">
-                            </div>
-                            <div class="details">
-                                <h2> Tom Perez
-                                    <br>
-                                    <a class="job-title" href="https://github.com/tpereza">
-                                        <img src="img/gitlogo.svg" alt="git">
-                                        <span>tpereza</span>
-                                    </a>
-                                </h2>
-                            </div>
+                        <br>
+                        <h1 style="text-align: center"> Cafe Wall Illusion</h1>
+                        <br>
+                        <div>
+                            <div id="illusion4" style="display: inline;"></div>
                         </div>
-                    </div><!-- END box wrapper -->
-                </div><!-- END container -->
-                <h1 style="text-align: center">USO DE TERCEROS</h1>
-                <br>
-                <p>
-                    Plantilla para esta página obtenida de:
-                    <a href="https://codyhouse.co/gem/animated-page-transition-2">CodyHouse</a>
-                    <br>
-                    Recursos graficos:
-                    <a href="https://codepen.io/2975/pen/QrZpoa">Cards</a>
-                </p>
-                <div class="image">
-                    <img height='100%' width='100%' src="img/grimIcon.svg" />
+                    </center>
                 </div>
+
+                <script>
+                    new p5(Scintillating(), 'illusion1');
+                    new p5(Ebbinghaus(), 'illusion2');
+                    new p5(Dots(), 'illusion3');
+                    new p5(cafeWall(), 'illusion4');
+                </script>
             </div> <!-- .cd-content -->
         </section> <!-- .cd-section -->
     </main> <!-- .cd-main -->
 
-    <div id="cd-loading-bar" data-scale="1" class="index"></div> <!-- lateral loading bar -->
+    <div id="cd-loading-bar" data-scale="1" class="project1"></div> <!-- lateral loading bar -->
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/velocity.min.js"></script>
     <script src="js/main.js"></script> <!-- Resource jQuery -->
