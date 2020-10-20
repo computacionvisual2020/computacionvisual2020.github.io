@@ -189,3 +189,217 @@ const cafeWall = () => {
         }
     }
 }
+
+const kanizsa = () => {
+    return (sketch) => {
+
+        let value = 0;
+
+        sketch.setup = () => {
+            sketch.createCanvas(400, 400);
+        }
+
+        sketch.draw = () => {
+            sketch.frameRate(120);
+            let c = sketch.color(0, 0, 0);
+            sketch.fill(c);
+            sketch.noStroke();
+            sketch.background(255,255,255);
+            sketch.circle(100+value/2, 100, 60);
+            sketch.circle(300, 100+value/2, 60);
+            sketch.circle(100, 300-value/2, 60);
+            sketch.circle(300-value/2, 300, 60);
+            sketch.fill(sketch.color(255,255,255));
+            sketch.square(100, 100, 200);
+        }
+
+        sketch.mouseMoved = () => {
+
+            value = sketch.mouseX;
+
+            if (sketch.mouseX > sketch.width) {
+                value = 0;
+            }else if (sketch.mouseX < 0) {
+                value = 0;
+            }
+        }
+    }
+}
+
+const ehrenstein = () => {
+    return (sketch) => {
+
+        let value = 0;
+
+        sketch.setup = () => {
+            sketch.createCanvas(400, 400);
+        }
+
+        sketch.draw = () => {
+            sketch.frameRate(120);
+            let c = sketch.color(0, 0, 0);
+            sketch.background(255,255,255);
+            sketch.fill(c);
+            for (let i=0; i<12; i++){
+                let angle = 2*sketch.PI/12;
+                let x1 = (20+value) * sketch.cos(angle*i) + sketch.width/2
+                let y1 = (20+value) * sketch.sin(angle*i) + sketch.height/2
+                let x2 = (80+value) * sketch.cos(angle*i) + sketch.width/2
+                let y2 = (80+value) * sketch.sin(angle*i) + sketch.height/2
+                sketch.line(x1, y1, x2, y2);
+            }
+        }
+
+        sketch.mouseMoved = () => {
+
+            value = sketch.mouseX/4;
+
+            if (sketch.mouseX > sketch.width) {
+                value = sketch.width/4;
+            }else if (sketch.mouseX < 0) {
+                value = 0;
+            }
+        }
+    }
+}
+
+const ehrenstein2 = () => {
+    return (sketch) => {
+
+        let value = 0;
+
+        sketch.setup = () => {
+            sketch.createCanvas(400, 400);
+        }
+
+        sketch.draw = () => {
+            sketch.frameRate(120);
+            let c = sketch.color(0, 0, 0);
+            sketch.background(255,255,255);
+            sketch.fill(c);
+            for (let i=0; i<12; i++){
+                let angle = 2*sketch.PI/12;
+                let x1 = (20+value/2) * sketch.cos(angle*i) + sketch.width/2
+                let y1 = (20+value/2) * sketch.sin(angle*i) + sketch.height/2
+                let x2 = (130) * sketch.cos(angle*i) + sketch.width/2
+                let y2 = (130) * sketch.sin(angle*i) + sketch.height/2
+                sketch.line(x1, y1, x2, y2);
+            }
+        }
+
+        sketch.mouseMoved = () => {
+
+            value = sketch.mouseX/2;
+
+            if (sketch.mouseX > sketch.width) {
+                value = sketch.width/2;
+            }else if (sketch.mouseX < 0) {
+                value = 0;
+            }
+        }
+    }
+}
+
+const vanTuijl = () => {
+    return (sketch) => {
+
+        let value = 0;
+
+        sketch.setup = () => {
+            sketch.createCanvas(400, 400);
+        }
+
+        sketch.draw = () => {
+            sketch.frameRate(120);
+            sketch.background(255,255,255);
+            sketch.strokeWeight(3);
+            sketch.stroke(0,0,0);
+            let k = 67;
+            for (let i=0; i<5; i++){
+                let x1 = k*(i+1);
+                let y1 = 0;
+                let x2 = k*(i+1);
+                let y2 = sketch.height;
+                sketch.line(x1, y1, x2, y2);
+            }
+            for (let i=0; i<5; i++){
+                let y1 = k*(i+1);
+                let x1 = 0;
+                let y2 = k*(i+1);
+                let x2 = sketch.width;
+                sketch.line(x1, y1, x2, y2);
+            }
+            for (let i=4; i>=0; i--){
+                let y1 = 0;
+                let x1 = k*(i);
+                let y2 = sketch.height-(k*(i));
+                let x2 = sketch.width;
+                sketch.line(x1, y1, x2, y2);
+            }
+            for (let i=4; i>0; i--){
+                let y1 = k*(i);
+                let x1 = 0;
+                let y2 = sketch.height;
+                let x2 = sketch.width-(k*(i));
+                sketch.line(x1, y1, x2, y2);
+            }
+            for (let i=4; i>=0; i--){
+                let y1 = 0;
+                let x1 = sketch.height-(k*(i));
+                let y2 = sketch.height-(k*(i));
+                let x2 = 0;
+                sketch.line(x1, y1, x2, y2);
+            }
+            for (let i=4; i>0; i--){
+                let y1 = k*(i);
+                let x1 = sketch.width;
+                let y2 = sketch.height;
+                let x2 = k*(i);
+                sketch.line(x1, y1, x2, y2);
+            }
+            sketch.strokeWeight(4);
+            sketch.stroke(0,255,0);
+            for (let j=0; j<5; j++){
+                for (let i=0; i<5; i++){
+                    let y1 = k*(i+1);
+                    let x1 = k*(j+1)-(15+value);
+                    let y2 = k*(i+1);
+                    let x2 = k*(j+1)+(15+value);
+                    sketch.line(x1, y1, x2, y2);
+                }
+                for (let i=0; i<5; i++){
+                    let y1 = k*(j+1)-(15+value);
+                    let x1 = k*(i+1);
+                    let y2 = k*(j+1)+(15+value);
+                    let x2 = k*(i+1);
+                    sketch.line(x1, y1, x2, y2);
+                }
+                for (let i=0; i<5; i++){
+                    let y1 = k*(i+1)-(10+value);
+                    let x1 = k*(j+1)-(10+value);
+                    let y2 = k*(i+1)+(10+value);
+                    let x2 = k*(j+1)+(10+value);
+                    sketch.line(x1, y1, x2, y2);
+                }
+                for (let i=0; i<5; i++){
+                    let y2 = k*(j+1)-(10+value);
+                    let x1 = k*(i+1)-(10+value)-2;
+                    let y1 = k*(j+1)+(10+value);
+                    let x2 = k*(i+1)+(10+value)-2;
+                    sketch.line(x1, y1, x2, y2);
+                }
+            }
+        }
+
+        sketch.mouseMoved = () => {
+
+            value = sketch.mouseX/30;
+
+            if (sketch.mouseX > sketch.width) {
+                value = sketch.width/30;
+            }else if (sketch.mouseX < 0) {
+                value = 0;
+            }
+        }
+    }
+}
