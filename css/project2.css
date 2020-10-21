@@ -1,0 +1,109 @@
+a {
+    text-decoration: none;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.container-table100 {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.wrap-table100 {
+    width: 1400px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    display: table;
+    margin: 0;
+}
+
+.row {
+    display: table-row;
+    background: #fff;
+}
+
+.row.header {
+    color: #ffffff;
+    background: #d35657;
+    text-align: center;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.row .cell {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.2;
+    font-weight: unset !important;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+}
+
+.row.header .cell {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset !important;
+
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.row .cell:nth-child(1) {
+    width: 260px;
+    padding-left: 40px;
+}
+
+.row .cell:nth-child(2) {
+    width: 160px;
+}
+
+.row .cell:nth-child(3) {
+    width: 160px;
+    padding: 5px;
+}
+
+.row .cell:nth-child(4) {
+    width: 200px;
+    text-align: left;
+}
+
+.row .cell:nth-child(5) {
+    width: 300px;
+    text-align: left;
+}
+
+.table,
+.row {
+    width: 100% !important;
+}
+
+.row.header:hover {
+    background-color: #d35657;
+    cursor: pointer;
+}
+
+.row:hover {
+    background-color: #faecec;
+    cursor: pointer;
+}
