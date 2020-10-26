@@ -362,15 +362,15 @@ const vanTuijl = () => {
             for (let j=0; j<5; j++){
                 for (let i=0; i<5; i++){
                     let y1 = k*(i+1);
-                    let x1 = k*(j+1)-(15+value);
+                    let x1 = k*(j+1)-(17+value);
                     let y2 = k*(i+1);
-                    let x2 = k*(j+1)+(15+value);
+                    let x2 = k*(j+1)+(17+value);
                     sketch.line(x1, y1, x2, y2);
                 }
                 for (let i=0; i<5; i++){
-                    let y1 = k*(j+1)-(15+value);
+                    let y1 = k*(j+1)-(17+value);
                     let x1 = k*(i+1);
-                    let y2 = k*(j+1)+(15+value);
+                    let y2 = k*(j+1)+(17+value);
                     let x2 = k*(i+1);
                     sketch.line(x1, y1, x2, y2);
                 }
