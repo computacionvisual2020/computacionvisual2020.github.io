@@ -94,7 +94,7 @@ const Dots = () => {
                     sketch.fill('green')
                     sketch.stroke('blue')
                     sketch.strokeWeight(3)
-                    sketch.arc(0, 0, 30, 30, 0, sketch.PI + j)
+                    sketch.arc(0, 0, 30, 30, 30 + j, sketch.PI + j)
                     sketch.pop()
 
                     sketch.push()
