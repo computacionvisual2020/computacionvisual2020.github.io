@@ -16,7 +16,7 @@ const PenroseTriangle = () => {
             sketch.setCamera(cam);
 
             if (flag) {
-                sketch.rotateY(- sketch.frameCount * 0.1)
+                sketch.rotateY(- sketch.frameCount * 0.07)
             } else {
                 sketch.orbitControl(1, 0, 0);
             }
