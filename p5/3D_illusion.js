@@ -12,7 +12,7 @@ const PenroseTriangle = () => {
         }
 
         sketch.draw = () => {
-            sketch.background(250);
+            sketch.background(0);
             sketch.setCamera(cam);
 
             if (flag) {
