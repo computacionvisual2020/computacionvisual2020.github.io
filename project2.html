@@ -13,6 +13,7 @@
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
     <script src="p5/sketch2.js"></script>
+    <script src="p5/3D_illusion.js"></script>
 
     <title> Taller Ilusiones </title>
 </head>
@@ -421,6 +422,14 @@
                         <div>
                             <div id="illusion8" style="display: inline;"></div>
                         </div>
+
+                        <br>
+                        <h1 id="Penrose" style="text-align: center"> Penrose Triangle</h1>
+                        <br>
+
+                        <div>
+                            <div id="illusion3D" style="display: inline;"></div>
+                        </div>
                     </center>
                 </div>
 
@@ -433,6 +442,7 @@
                     new p5(ehrenstein(), 'illusion6');
                     new p5(ehrenstein2(), 'illusion7');
                     new p5(vanTuijl(), 'illusion8');
+                    new p5(PenroseTriangle(), 'illusion3D');
                 </script>
             </div> <!-- .cd-content -->
         </section> <!-- .cd-section -->
