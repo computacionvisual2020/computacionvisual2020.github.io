@@ -16,12 +16,11 @@ a:hover {
 }
 
 .container-table100 {
-    width: 100%;
+    width: 80%;
     padding-bottom: 30px;
 }
 
 .wrap-table100 {
-    width: 1400px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -68,7 +67,7 @@ a:hover {
     padding-top: 19px;
     padding-bottom: 19px;
 }
-
+/* 
 .row .cell:nth-child(1) {
     width: 260px;
     padding-left: 40px;
@@ -91,7 +90,7 @@ a:hover {
 .row .cell:nth-child(5) {
     width: 300px;
     text-align: left;
-}
+} */
 
 .table,
 .row {
