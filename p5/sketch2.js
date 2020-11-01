@@ -29,7 +29,11 @@ const Scintillating = () => {
     }
 }
 const Ebbinghaus = () => {
+
+    let sketchswitch = false;
+
     return (sketch) => {
+        
         sketch.setup = () => {
             sketch.createCanvas(600, 400);
         }
@@ -37,40 +41,77 @@ const Ebbinghaus = () => {
         sketch.draw = () => {
             sketch.background(220);
 
-            let k = sketch.map(sketch.mouseX, 0, sketch.width, 200, 0);
+            if(sketchswitch){
+                let k = sketch.map(sketch.mouseX, 0, sketch.width, 200, 0);
 
-            sketch.noStroke();
-            sketch.fill('yellow');
-            sketch.ellipse(160, 200, 50, 50);
+                sketch.noStroke();
+                sketch.fill('yellow');
+                sketch.ellipse(160, 200, 50, 50);
 
-            sketch.fill(155, 0, 215, k);
+                sketch.fill(155, 0, 215, k);
 
-            sketch.ellipse(110, 120, 90, 90);
-            sketch.ellipse(210, 120, 90, 90);
+                sketch.ellipse(110, 120, 90, 90);
+                sketch.ellipse(210, 120, 90, 90);
 
-            sketch.ellipse(110, 280, 90, 90);
-            sketch.ellipse(210, 280, 90, 90);
+                sketch.ellipse(110, 280, 90, 90);
+                sketch.ellipse(210, 280, 90, 90);
 
-            sketch.ellipse(60, 200, 90, 90);
-            sketch.ellipse(260, 200, 90, 90);
+                sketch.ellipse(60, 200, 90, 90);
+                sketch.ellipse(260, 200, 90, 90);
 
-            sketch.fill('yellow');
-            sketch.ellipse(450, 200, 50, 50);
+                sketch.fill('yellow');
+                sketch.ellipse(450, 200, 50, 50);
 
-            sketch.fill(155, 0, 215, k);
+                sketch.fill(155, 0, 215, k);
 
-            sketch.ellipse(450, 154, 25, 25);
-            sketch.ellipse(450, 246, 25, 25);
+                sketch.ellipse(450, 154, 25, 25);
+                sketch.ellipse(450, 246, 25, 25);
 
-            sketch.ellipse(400, 200, 25, 25);
-            sketch.ellipse(500, 200, 25, 25);
+                sketch.ellipse(400, 200, 25, 25);
+                sketch.ellipse(500, 200, 25, 25);
 
-            sketch.ellipse(415, 235, 25, 25);
-            sketch.ellipse(485, 235, 25, 25);
+                sketch.ellipse(415, 235, 25, 25);
+                sketch.ellipse(485, 235, 25, 25);
 
-            sketch.ellipse(415, 164, 25, 25);
-            sketch.ellipse(485, 164, 25, 25);
+                sketch.ellipse(415, 164, 25, 25);
+                sketch.ellipse(485, 164, 25, 25);
+            }else {
+                sketch.noStroke();
+                sketch.fill('yellow');
+                sketch.ellipse(160, 200, 50, 50);
 
+                sketch.fill(155, 0, 215, 250);
+
+                sketch.ellipse(110, 120, 90, 90);
+                sketch.ellipse(210, 120, 90, 90);
+
+                sketch.ellipse(110, 280, 90, 90);
+                sketch.ellipse(210, 280, 90, 90);
+
+                sketch.ellipse(60, 200, 90, 90);
+                sketch.ellipse(260, 200, 90, 90);
+
+                sketch.fill('yellow');
+                sketch.ellipse(450, 200, 50, 50);
+
+                sketch.fill(155, 0, 215, 250);
+
+                sketch.ellipse(450, 154, 25, 25);
+                sketch.ellipse(450, 246, 25, 25);
+
+                sketch.ellipse(400, 200, 25, 25);
+                sketch.ellipse(500, 200, 25, 25);
+
+                sketch.ellipse(415, 235, 25, 25);
+                sketch.ellipse(485, 235, 25, 25);
+
+                sketch.ellipse(415, 164, 25, 25);
+                sketch.ellipse(485, 164, 25, 25);
+            }
+        }
+
+        sketch.mouseClicked = () => {
+            sketchswitch = !sketchswitch;
         }
     }
 }

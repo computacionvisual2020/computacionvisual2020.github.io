@@ -91,7 +91,7 @@ void main() {
     st.x *= u_resolution.x/u_resolution.y;
 	//vec3 color = vec3(.8,.2,.2);
     
-    st = movingTiles(st,8.0,0.15);
+    st = movingTiles(st,5.0,0.15);
 
     //st = fract(st);
     

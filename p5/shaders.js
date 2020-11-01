@@ -16,7 +16,7 @@ const shader1 = (imgPath, imgWidth, imgHeight) => {
 
             sketch.shader(theShader);
             theShader.setUniform('u_resolution', [sketch.width, sketch.height]);
-            theShader.setUniform('u_time', sketch.frameCount * 0.05);
+            theShader.setUniform('u_time', sketch.frameCount * 0.03);
 
             sketch.rect(0 ,0 ,sketch.width ,sketch.height);
         }
