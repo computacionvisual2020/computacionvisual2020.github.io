@@ -234,6 +234,7 @@ const cafeWall = () => {
 const kanizsa = () => {
     return (sketch) => {
 
+        let sketchswitch = false;
         let value = 0;
 
         sketch.setup = () => {
@@ -254,14 +255,20 @@ const kanizsa = () => {
             sketch.square(100, 100, 200);
         }
 
+        sketch.mouseClicked = () => {
+            sketchswitch = !sketchswitch;
+        }
+
         sketch.mouseMoved = () => {
 
-            value = sketch.mouseX;
+            if (sketchswitch) {
+                value = sketch.mouseX;
 
-            if (sketch.mouseX > sketch.width) {
-                value = 0;
-            }else if (sketch.mouseX < 0) {
-                value = 0;
+                if (sketch.mouseX > sketch.width) {
+                    value = 0;
+                } else if (sketch.mouseX < 0) {
+                    value = 0;
+                }
             }
         }
     }
@@ -270,6 +277,7 @@ const kanizsa = () => {
 const ehrenstein = () => {
     return (sketch) => {
 
+        let sketchswitch = false;
         let value = 0;
 
         sketch.setup = () => {
@@ -291,14 +299,20 @@ const ehrenstein = () => {
             }
         }
 
+        sketch.mouseClicked = () => {
+            sketchswitch = !sketchswitch;
+        }
+
         sketch.mouseMoved = () => {
 
-            value = sketch.mouseX/4;
+            if (sketchswitch) {
+                value = sketch.mouseX / 4;
 
-            if (sketch.mouseX > sketch.width) {
-                value = sketch.width/4;
-            }else if (sketch.mouseX < 0) {
-                value = 0;
+                if (sketch.mouseX > sketch.width) {
+                    value = sketch.width / 4;
+                } else if (sketch.mouseX < 0) {
+                    value = 0;
+                }
             }
         }
     }
@@ -307,6 +321,7 @@ const ehrenstein = () => {
 const ehrenstein2 = () => {
     return (sketch) => {
 
+        let sketchswitch = false;
         let value = 0;
 
         sketch.setup = () => {
@@ -328,14 +343,20 @@ const ehrenstein2 = () => {
             }
         }
 
+        sketch.mouseClicked = () => {
+            sketchswitch = !sketchswitch;
+        }
+
         sketch.mouseMoved = () => {
 
-            value = sketch.mouseX/2;
+            if (sketchswitch) {
+                value = sketch.mouseX / 2;
 
-            if (sketch.mouseX > sketch.width) {
-                value = sketch.width/2;
-            }else if (sketch.mouseX < 0) {
-                value = 0;
+                if (sketch.mouseX > sketch.width) {
+                    value = sketch.width / 2;
+                } else if (sketch.mouseX < 0) {
+                    value = 0;
+                }
             }
         }
     }
@@ -344,6 +365,7 @@ const ehrenstein2 = () => {
 const vanTuijl = () => {
     return (sketch) => {
 
+        let sketchswitch = false;
         let value = 0;
 
         sketch.setup = () => {
@@ -431,15 +453,19 @@ const vanTuijl = () => {
                 }
             }
         }
+        sketch.mouseClicked = () => {
+            sketchswitch = !sketchswitch;
+        }
 
         sketch.mouseMoved = () => {
+            if (sketchswitch){
+                value = sketch.mouseX/30;
 
-            value = sketch.mouseX/30;
-
-            if (sketch.mouseX > sketch.width) {
-                value = sketch.width/30;
-            }else if (sketch.mouseX < 0) {
-                value = 0;
+                if (sketch.mouseX > sketch.width) {
+                    value = sketch.width/30;
+                }else if (sketch.mouseX < 0) {
+                    value = 0;
+                }
             }
         }
     }
