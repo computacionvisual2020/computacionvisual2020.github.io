@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="css/project2.css">
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+    <script src="p5/sketch2.js"></script>
+    <script src="p5/3D_illusion.js"></script>
+    <script src="p5/shaders.js"></script>
+
+    <title> Taller Ilusiones </title>
+</head>
+
+<body>
+    <nav class="cd-side-navigation">
+        <ul>
+            <li>
+                <a href="#0" data-menu="index">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <polygon fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" points="12,2 3,10 3,23 9,23 9,16 15,16 15,23 21,23 21,10 "
+                                stroke-linejoin="miter"></polygon>
+                        </g>
+                    </svg>
+                    Intro
+                </a>
+            </li>
+
+            <li>
+                <a href="#0" data-menu="project1">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+                                stroke-linejoin="miter"></polyline>
+                            <rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+                            <line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+                            <line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+                        </g>
+                    </svg>
+                    Proyecto 1
+                </a>
+            </li>
+
+            <li>
+                <a class="selected" href="#0" data-menu="project2">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+                                stroke-linejoin="miter"></polyline>
+                            <rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+                            <line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+                            <line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+                        </g>
+                    </svg>
+                    Proyecto 2
+                </a>
+            </li>
+
+            <li>
+                <a href="#0" data-menu="projects">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <rect x="1" y="1" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" width="22" height="22" stroke-linejoin="miter"></rect>
+                            <rect data-color="color-2" x="5" y="5" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+                                stroke-linejoin="miter"></rect>
+                            <rect data-color="color-2" x="14" y="5" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+                                stroke-linejoin="miter"></rect>
+                            <rect data-color="color-2" x="5" y="14" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+                                stroke-linejoin="miter"></rect>
+                            <rect data-color="color-2" x="14" y="14" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+                                stroke-linejoin="miter"></rect>
+                        </g>
+                    </svg>
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#0" data-menu="contact">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" points=" 19,7 12,14 5,7 "
+                                stroke-linejoin="miter"></polyline>
+                            <rect x="1" y="3" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" width="22" height="18" stroke-linejoin="miter"></rect>
+                            <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" x1="7" y1="15" x2="5" y2="17"
+                                stroke-linejoin="miter"></line>
+                            <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" x1="17" y1="15" x2="19" y2="17"
+                                stroke-linejoin="miter"></line>
+                        </g>
+                    </svg>
+                    </svg>
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav> <!-- .cd-side-navigation -->
+
+    <main class="cd-main">
+        <section class="cd-section project1 visible">
+            <header>
+                <div class="cd-title">
+                    <h2>Proyecto 2</h2>
+                    <span>Ilusiones opticas</span>
+                </div>
+
+                <a href="#project2-content" class="cd-scroll">Scroll Down</a>
+            </header>
+
+            <div class="cd-content" id="project2-content">
+                <div style="text-align: justify;">
+                    <center>
+                        <div class="container-table100">
+                            <div class="wrap-table100">
+                                <div class="table">
+                                    <div class="row header">
+                                        <div class="cell">
+                                            Ilusión
+                                        </div>
+                                        <div class="cell">
+                                            Categoría
+                                        </div>
+                                        <div class="cell">
+                                            Referencia
+                                        </div>
+                                        <div class="cell">
+                                            Tipo de interactividad
+                                        </div>
+                                        <div class="cell">
+                                            URL código base
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#grid">
+                                                Scintillating Grid Illusion
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            Alucinación
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="https://www.illusionsindex.org/i/scintillating-grid">
+                                                Scintillating-grid Illusion Index
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            No aplica
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/p5/sketch2.js#L1">
+                                                Repositorio Github p5/sketch2.js
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#dots">
+                                                Moving Dots Illusion
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            Alucinación
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="http://www.illusion-optical.com/Optical-Illusions/MovingDots.php"
+                                                target="_blank">
+                                                Moving Dots Explanation
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            No aplica
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/p5/sketch2.js#L119">
+                                                Repositorio Github p5/sketch2.js
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#Ebbinghaus">
+                                                Ebbinghaus Illusion
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            Geométrico
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="https://www.illusionsindex.org/ir/ebbinghaus-illusion">
+                                                Ebbinghaus Illusion Index
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            Click y mover el mouse
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/p5/sketch2.js#L31">
+                                                Repositorio Github p5/sketch2.js
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#cafe">
+                                                Cafe Wall Illusion
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            Geométrico
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="https://www.illusionsindex.org/i/cafe-wall-illusion"
+                                                target="_blank">
+                                                Cafe Wall Illusion Index
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            Click a la ilusión y mover con el mouse
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/p5/sketch2.js#L157">
+                                                Repositorio Github p5/sketch2.js
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#cafeShaders">
+                                                Cafe Wall Illusion Shaders
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            Geométrico
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="https://www.illusionsindex.org/i/cafe-wall-illusion"
+                                                target="_blank">
+                                                Cafe Wall Illusion Index
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            No aplica
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/shaders/fragment/shader1.frag">
+                                                Repositorio Github shaders/fragment/shader1.frag
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#Kanizsa">
+                                                Kanizsa Square
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            Ficción
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="https://www.illusionsindex.org/i/kanizsa-triangle">
+                                                Kanizsa Triangle
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            Click y movimiento mouse horizontal
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/p5/sketch2.js#L234">
+                                                Repositorio Github p5/sketch2.js
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#Ehrenstein">
+                                                Ehrenstein Figure
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            Ficción
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="https://www.illusionsindex.org/i/ehrenstein-figure">
+                                                Ehrenstein Figure
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            Click y movimiento mouse horizontal
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/p5/sketch2.js#L277">
+                                                Repositorio Github p5/sketch2.js
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#Neon">
+                                                Neon Van Tuijl
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            Ficción
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="https://www.illusionsindex.org/i/neon-color-spreading">
+                                                Neon Color Spreading
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            Click y movimiento mouse horizontal
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/p5/sketch2.js#L365">
+                                                Repositorio Github p5/sketch2.js
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="cell" data-title="Ilusión">
+                                            <a href="#Penrose">
+                                                Penrose Triangle
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Categoría">
+                                            3D - Geométrico
+                                        </div>
+                                        <div class="cell" data-title="Referencia">
+                                            <a href="https://en.wikipedia.org/wiki/Penrose_triangle">
+                                                Penrose Triangle
+                                            </a>
+                                        </div>
+                                        <div class="cell" data-title="Tipo">
+                                            Doble click rotación automática/manual
+                                        </div>
+                                        <div class="cell" data-title="URL">
+                                            <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/blob/master/p5/3D_illusion.js#L1">
+                                                Repositorio Github p5/3D_illusion.js
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <h1 id="Hallucination" style="text-align: center"> Alucinación</h1>
+                        <br>
+                        <p style="text-align: justify;">
+                            Una alucinación es una percepción en ausencia de estímulo aparente que tiene cualidades de
+                            percepción real. Las alucinaciones son vívidas, sustanciales y se encuentran en el espacio
+                            objetivo externo. Se distinguen de los fenómenos relacionados de soñar, que no implica
+                            vigilia; ilusión, que implica percepción real distorsionada o mal interpretada; imágenes,
+                            que no imita la percepción real y está bajo control voluntario; y pseudoalucinación, que no
+                            imita la percepción real, pero no está bajo control voluntario. Las alucinaciones también
+                            difieren de las "percepciones delirantes", en las que a un estímulo correctamente sentido e
+                            interpretado (es decir, una percepción real) se le da un significado adicional (y
+                            típicamente extraño).
+                        </p>
+
+                        <br />
+                        <h1 id="grid" style="text-align: center"> Scintillating Grid Illusion</h1>
+                        <br />
+                        <p style="text-align: justify;">
+                            La "scintillating grid" es una ilusión de contraste de ligereza simultánea de un tipo
+                            similar a la retícula de Hermann, aunque fue descubierta más de un siglo después por J. R.
+                            Bergen (1985) (según se informa en Schrauf et al. (1997)). Una diferencia importante es que
+                            la figura de " scintillating grid" comprende puntos blancos en la intersección de las
+                            líneas grises en un suelo negro, mientras que no hay tales puntos en la rejilla de Hermann,
+                            y así cualquier punto que pueda aparecer dentro de la cuadrícula de Hermann son puramente
+                            artefactos del sistema visual. En resumen, los puntos en " scintillating grid" están
+                            realmente allí - sólo se ven a veces en negro cuando de hecho son blancos.
+                            <br />
+                            <br />
+                            La explicación clásica de la fisiología detrás de scintillating grid se debe
+                            a Baumgartner (1960), que presentó para explicar la rejilla de Hermann. Baumgartner creía
+                            que el efecto se debe a procesos inhibitorios en las células ganglionares retinianas, las
+                            neuronas que transmiten señales desde el ojo al cerebro. A cada célula corresponde una
+                            pequeña región de la retina llamada campo receptivo, donde las barras y conos fotoreceptivos
+                            pueden desencadenar una respuesta eléctrica en esa célula. Los campos receptivos de las
+                            células ganglionares adyacentes pueden superponerse, y en esta superposición ocurre la
+                            ilusión.
+                        </p>
+                        <div>
+                            <div id="illusion1" style="display: inline;"></div>
+                        </div>
+                        <br />
+
+                        <h1 id="dots" style="text-align: center"> Moving Dots Illusion</h1>
+                        <br />
+                        <p style="text-align: justify;">
+                            Puesto que vivimos en un mundo 3D, nuestra mente trata de convertir un objeto 2D en uno 3D.
+                            En esta ilusión óptica, tratamos de darle sentido a estos objetos 2D. El sombreado utilizado
+                            es completamente incongruente. Los ojos se fijan en una parte de la ilustración que se ve
+                            adecuadamente sombreada, pero luego la encuentran inconexa con el sombreado en otras áreas
+                            cercanas. Los ojos siguen saltando alrededor del dibujo tratando de mapear una solución 3-D
+                            que haría que la ilustración de sombreado tenga sentido, pero nunca parece funcionar.
+                        </p>
+                        <div>
+                            <div id="illusion3" style="display: inline;"></div>
+                        </div>
+                        <br />
+
+                        <h1 id="Geometric" style="text-align: center">Geométrico</h1>
+                        <br>
+                        <p style="text-align: justify;">
+                            Al estudiar la geometría uno se concentra en la posición de los puntos y en la longitud,
+                            orientación y curvatura de las líneas. Las ilusiones geométricas-ópticas se relacionan en
+                            primer lugar con las características de los objetos definidas por la geometría. Aunque la
+                            visión es tridimensional, en muchas situaciones la profundidad se puede factorizar y la
+                            atención se concentra en una vista simple de una tableta bidimensional con sus coordenadas x
+                            e y.
+                        </p>
+
+                        <br>
+                        <h1 id="Ebbinghaus" style="text-align: center"> Ebbinghaus Illusion</h1>
+                        <br />
+                        <p style="text-align: justify;">
+                            La ilusión de Ebbinghaus es una de varias ilusiones de contraste de tamaño que han sido
+                            estudiadas tanto por filósofos como por científicos cognitivos. Bela Julesz (1928-2003),
+                            neurocientífico y psicólogo experimental húngaro, planteó la hipótesis de que el efecto
+                            ilusorio de los discos de Ebbinghaus no puede explicarse completamente en términos de
+                            procesos retinianos (Julesz 1971).
+                            <br />
+                            <br />
+                            En la visión normal, la información monocular de cada ojo se envía a lo largo del nervio
+                            óptico y se somete a fusión binocular en la corteza cerebral. Esto produce una percepción
+                            'ciclópea', en la que el sujeto posee un solo punto de vista, pero ha mejorado enormemente
+                            las potencias de la percepción de profundidad debido a señales binoculares como el paralaje
+                            y la convergencia (la tendencia a ir muy ligeramente 'bizco' a medida que miramos un objeto
+                            de cerca). La ilusión de Ebbinghaus ocurre incluso cuando el patrón de discos existe sólo
+                            como una disparidad entre las imágenes estereográficas. Julesz 1971 concluyó que la ilusión
+                            por lo tanto debe ser generada más allá del ojo y el nervio óptico, existiendo sobre una
+                            metafórica retina ciclópea que sugiere altamente la imagen de los procesos corticales.
+                        </p>
+                        <div>
+                            <div id="illusion2" style="display: inline;"></div>
+                        </div>
+                        <br />
+
+                        <h1 id="cafe" style="text-align: center"> Cafe Wall Illusion</h1>
+                        <br />
+                        <p style="text-align: justify;">
+                            Esta ilusión es interesante porque es relevante para los debates sobre la modularidad, la
+                            penetración cognitiva y la naturaleza de la experiencia. Para explicar: en la hipótesis de
+                            que la mente es modular, un módulo mental es una especie de departamento semi-independiente
+                            de la mente que se ocupa de tipos particulares de entradas, y da tipos particulares de
+                            salidas, y cuyo funcionamiento interno no es accesible a la conciencia consciente de la
+                            persona - a todo lo que uno puede acceder son las salidas relevantes. Así, en el caso del
+                            Café Wall Illusion, una manera estándar de explicar por qué la experiencia de la ilusión
+                            persiste a pesar de que uno sabe que está experimentando una ilusión es que el módulo, o
+                            módulos, que constituyen el sistema visual son 'cognitivamente impenetrables' en cierto
+                            grado.
+                        </p>
+                        <div>
+                            <div id="illusion4" style="display: inline;"></div>
+                        </div>
+                        <br />
+                        <h1 id="cafeShaders" style="text-align: center"> Cafe Wall Illusion Shaders</h1>
+                        <br />
+                        <p style="text-align: justify;">
+                            La implementación mediante shaders para la ilusión de Cafe Wall se realizó con ayuda de los ejemplos expuestos en
+                            el libro "The Book of Shaders", adaptando a nuestra conveniencia diferentes funciones como, movingTiles, la cual se 
+                            encarga de dar movimiento, invirtiendo el sentido de cada fila intermedia, box, que se encarga de dibujar la cuadrícula y dar
+                            forma y espaciado a cada cuadrado, y finalmente, rotateTilePattern, donde se colorea cada cuadrado dependiendo de su posición en
+                            la cuadrícula. En cuanto al vertex shader, este se utiliza para centrar el dibujo en el canvas y administrar las dimensiones de
+                            renderizado.
+                            <br>
+                            <br>
+                            Gracias al desarrollo de esta ilusión, descubrimos que los fragment shaders nos brindan cierta libertad, que
+                            librerías como P5.js o el mismo processing no nos dan. Al experimentar con los ejemplos de "The Book of Shaders" y
+                            el desarrollo de esta ilusión, nos surgieron varias dudas con respecto al alcance que el manejo de fragment shaders 
+                            y eventualmente vertex shaders pueden brindarnos, para dar continuidad al desarrollo de programación visual.
+                            <br>
+                            <br>
+                            Siendo concretos, nuestro principal interés se centra en la implementación de los shaders en la creación de renderizados
+                            3D, asi tambien como Planar Patterns, ya que en el libro "The Book of shaders" a pesar de ser una fuente de aprendizaje verdaderamente útil,
+                            no logramos encontrar informacion de como desarrollar este tipo de implementaciones de shaders.
+                        </p>
+                        <div>
+                            <div id="shader" style="display: inline;"></div>
+                        </div>
+
+                        <br />
+                        <h1 id="Fiction" style="text-align: center"> Ficciones</h1>
+                        <br>
+                        <p style="text-align: justify;">
+                            Los contornos ilusorios/subjetivos o ficciones son ilusiones visuales que evocan la
+                            percepción de un
+                            borde sin una luminancia o cambio de color en ese borde. El brillo ilusorio y el orden de la
+                            profundidad
+                            acompañan con frecuencia a los contornos ilusorios. A Friedrich Schumann se le atribuye a
+                            menudo el
+                            descubrimiento de contornos ilusorios a principios del siglo XX, sin embargo, los contornos
+                            ilusorios
+                            están presentes en el arte que data de la Edad Media. El artículo de 1976 de Gaetano Kanizsa
+                            en Scientific
+                            American marca el resurgimiento del interés por los contornos ilusorios para los científicos
+                            de la visión.
+                            <br>
+                            <br>
+                            Los contornos ilusorios proporcionan pistas sobre cómo el sistema visual construye
+                            superficies cuando
+                            partes del borde de la superficie no son visibles. Se cree que la codificación de
+                            superficies es una
+                            parte indispensable de la percepción visual, que forma una etapa intermedia crítica del
+                            procesamiento
+                            visual entre el análisis inicial de las características visuales y la capacidad de reconocer
+                            estímulos
+                            complejos como rostros y escenas.
+                        </p>
+
+                        <br>
+                        <h1 id="Kanizsa" style="text-align: center"> Kanizsa Square</h1>
+                        <br>
+                        <p style="text-align: justify;">
+                            Quizás el ejemplo más famoso de un contorno ilusorio es la configuración Pac-Man
+                            popularizada por Gaetano Kanizsa.
+                            Las figuras de Kanizsa activan la percepción de un contorno ilusorio al alinear inductores
+                            en forma de Pac-Man en el
+                            campo visual de manera que los bordes formen una forma. Aunque no forman parte
+                            explícitamente de la imagen, las figuras
+                            de Kanizsa evocan la percepción de una forma, definida por un contorno ilusorio nítido.
+                            Normalmente, la forma parece
+                            más brillante que el fondo, aunque la luminancia es en realidad homogénea. Además, la forma
+                            ilusoria parece estar más
+                            cerca del espectador que los inductores.
+                            <br>
+                            <br>
+                            La ilusión del cuadrado de Kanizsa nos hace darnos cuenta de la forma en que funcionan
+                            nuestros sistemas visuales,
+                            que no notamos en nuestra experiencia diaria. Al mirar la figura, la mayoría de la gente
+                            tendrá la experiencia
+                            visual de un contorno de brillo aparente que define un cuadrado que ocluye cuatro discos
+                            negros. Por supuesto, este
+                            cuadrado no existe de hecho, y no estamos percibiendo discos ocluidos sino más bien
+                            fragmentos de discos parecidos
+                            a los de Pac-Man. Hay un 'relleno' ilusorio, de modo que la figura aparece llena de un
+                            blanco sólido
+                            que es más brillante que el resto de la figura. Tenga en cuenta que el cuadrado de Kanizsa
+                            crea una ilusión de
+                            profundidad: la figura central parece sentarse en un plano más alto que el pacmen inductor.
+                        </p>
+                        <div>
+                            <div id="illusion5" style="display: inline;"></div>
+                        </div>
+
+                        <br>
+                        <h1 id="Ehrenstein" style="text-align: center"> Ehrenstein Figure</h1>
+                        <br>
+                        <p style="text-align: justify;">
+                            La figura de Ehrenstein fue introducida por primera vez en 1841 por el psicólogo alemán
+                            Walter Ehrenstein
+                            (1899-1961) de la escuela de psicología Gestalt de Berlín de principios del siglo XX.
+                            Estrechamente
+                            relacionada con las figuras de Kanizsa, en lugar de emplear inductores de
+                            Pac-Man, la ilusión de Ehrenstein desencadena una percepción de contorno ilusoria a través
+                            de segmentos
+                            de líneas radiales. Para la mayoría de las personas, la figura de Ehrenstein producirá la
+                            experiencia visual
+                            de contornos aparentes que definen discos blancos. Por supuesto, estos discos no existen
+                            realmente como parte
+                            de la figura; en realidad, solo percibimos fragmentos de líneas. Se experimenta un "relleno"
+                            ilusorio de color,
+                            de modo que los discos aparentes se exhiben con un blanco sólido que es más brillante que el
+                            resto de la
+                            figura. Otro efecto es de profundidad ilusoria: los discos ilusorios se perciben como
+                            figuras que
+                            ocluyen el suelo indefinido que continúa detrás de ellos en un plano diferente.
+                        </p>
+                        <div>
+                            <div id="illusion6" style="display: inline;"></div>
+                        </div>
+                        <div>
+                            <div id="illusion7" style="display: inline;"></div>
+                        </div>
+
+                        <br>
+                        <h1 id="Neon" style="text-align: center"> Neon Van Tuijl</h1>
+                        <br>
+                        <p style="text-align: justify;">
+                            La difusión del color de neón es una ilusión óptica en la categoría de efectos de
+                            transparencia,
+                            caracterizada por bordes fluidos entre los bordes de un objeto coloreado y el fondo en
+                            presencia
+                            de líneas negras. La ilusión se documentó por primera vez en 1971 y finalmente fue
+                            redescubierta
+                            en 1975 por Van Tuijl. "Neon" hace referencia a un tubo de neón y los colores brillantes que
+                            aparecen dentro de uno. La "difusión del color" hace referencia a cómo los colores parecen
+                            extenderse desde el centro de la parte coloreada del objeto.
+                        </p>
+                        <div>
+                            <div id="illusion8" style="display: inline;"></div>
+                        </div>
+
+                        <br>
+                        <h1 id="Penrose" style="text-align: center"> Penrose Triangle</h1>
+                        <br>
+                        <p style="text-align: justify;">
+                            Este objeto imposible aparenta ser un objeto sólido, formado por tres tramos rectos de
+                            sección cuadrada, que se encuentran unidos formando ángulos rectos en los extremos del
+                            triángulo que conforman.
+                            <br>
+                            Para esta práctica, se usaron los conceptos de translaciones y rotaciones geométricas,
+                            extrapoladas a un espacio de 3 dimensiones. En este caso específico se hizo uso dos tipos de
+                            objetos, un Cubo y un Plano, donde, se mediante un nodo inicial, se realizan traslaciones
+                            sobre éste, dibujandolo en pantalla para cada nueva posición en el espacio, la primera
+                            columna se traslada en el eje Y, la segunda el eje Z y la última en el eje X.
+                            <br>
+                            El último cubo se forma mediante la rotación de un Plano, para que, gracias al uso de los
+                            colores, la arista final pueda dar forma al triángulo esperado visto desde una posición
+                            específica. Finalmente, para lograr el efecto completo, es necesario tener un punto de vista
+                            ortogonal, para que la perspectiva sea correcta y la ilusión pueda verse como la conjunción
+                            de cubos del mismo tamaño.
+                        </p>
+                        <div>
+                            <div id="illusion3D" style="display: inline;"></div>
+                        </div>
+                    </center>
+                </div>
+
+                <script>
+                    new p5(Scintillating(), 'illusion1');
+                    new p5(Ebbinghaus(), 'illusion2');
+                    new p5(Dots(), 'illusion3');
+                    new p5(cafeWall(), 'illusion4');
+                    new p5(kanizsa(), 'illusion5');
+                    new p5(ehrenstein(), 'illusion6');
+                    new p5(ehrenstein2(), 'illusion7');
+                    new p5(vanTuijl(), 'illusion8');
+                    new p5(PenroseTriangle(), 'illusion3D');
+                    new p5(shader1(), 'shader');
+                </script>
+            </div> <!-- .cd-content -->
+        </section> <!-- .cd-section -->
+    </main> <!-- .cd-main -->
+
+    <div id="cd-loading-bar" data-scale="1" class="project1"></div> <!-- lateral loading bar -->
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/velocity.min.js"></script>
+    <script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+
+</html>

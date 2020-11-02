@@ -377,11 +377,23 @@ Navigation
   line-height: 1.6;
   color: #999999;
 }
+
+.cd-content ul {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 2em;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #999999;
+}
 @media only screen and (min-width: 768px) {
   .cd-content {
     padding: 4em 0;
   }
   .cd-content p {
+    font-size: 1.6rem;
+  }
+  .cd-content ul {
     font-size: 1.6rem;
   }
 }

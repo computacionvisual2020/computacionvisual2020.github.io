@@ -13,6 +13,7 @@
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
 	<script src="p5/sketch1.js"></script>
+	<script src="p5/taller1_video.js"></script>
 
 	<title>Animated Page Transition #2 | CodyHouse</title>
 </head>
@@ -53,6 +54,27 @@
 						</g>
 					</svg>
 					Proyecto 1
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" data-menu="project2">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+								stroke-linejoin="miter"></polyline>
+							<rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+						</g>
+					</svg>
+					Proyecto 2
 				</a>
 			</li>
 
@@ -120,37 +142,133 @@
 			</header>
 
 			<div class="cd-content" id="project1-content">
+				<div style="text-align: justify;">
+					<p>
+						El núcleo (kernel) de imagen es una matriz que se utiliza para aplicar efectos sobre un archivo
+						base. Los efectos pueden ser desenfocar, afilar, delinear, o grabar en relieve, entre otros.
+						También se utilizan en el aprendizaje automático para la extracción de características en la
+						imagen. En dicho proceso se conoce como “convolución”. Convolución es el proceso de agregar cada
+						elemento de la imagen a sus vecinos locales, ponderados por el núcleo. Esto está relacionado con
+						una forma de convolución matemática.
+						<br>
+						Algunos de los efectos consisten en:
+					</p>
+					<ul>
+						<li>Desenfocar: resultado de desenfocar una imagen mediante una función gaussiana,
+							reduce el ruido
+							de la imagen y reduce los detalles.</li>
+						<li>Desenfocar: resultado de desenfocar una imagen mediante una función gaussiana, reduce el
+							ruido
+							de la imagen y reduce los detalles.</li>
+						<li>Delinear: identifica puntos en una imagen digital en los que el brillo de la imagen cambia
+							bruscamente o tiene discontinuidades.</li>
+						<li>Grabar en relieve: cada píxel de una imagen se reemplaza por un resaltado o una sombra,
+							dependiendo de los límites claros / oscuros de la imagen original.</li>
+						<li>Afilar: mejora y mantiene el brillo en las regiones de cambio rápido; principalmente bordes.
+						</li>
+					</ul>
+					<p>
+						Para aplicar los efectos sobre las imágenes presentadas, su usó el paquete p5.js de JavaScript,
+						mediante el cual se hace un proceso iterativo en el que se opera sobre cada pixel y sus vecinos
+						inmediatos con el núcleo del filtro deseado para obtener el nuevo valor de cada pixel. En el
+						programa, se crearon funciones propias donde se modifica cada valor RGB de los pixeles y se
+						actualiza en tiempo real el resultado.
+						Las imágenes de ejemplo fueron tomadas de Wikipedia:
+						<br>
+						<a href=" https://en.wikipedia.org/wiki/Kernel_(image_processing)">Animal </a>
+						<br>
+						<a href=" https://en.wikipedia.org/wiki/HSL_and_HSV">Fuego</a>
+					</p>
+				</div>
+
 				<center>
 					<div>
 						<div id="image1" style="display: inline;"></div>
 						<div id="image2" style="display: inline;"></div>
 					</div>
 
-						<select id="kernel1" style="display: block; margin: 3vh 0;">
-							<option value="" disabled>Efecto</option>
-							<option value="blur">Blur</option>
-							<option value="emboss">Emboss</option>
-							<option value="identity">Identity</option>
-							<option value="leftSobel">Left sobel</option>
-							<option value="rightSobel">Right sobel</option>
-							<option value="topSobel">Top sobel</option>
-							<option value="bottomSobel">Bottom sobel</option>
-							<option value="outline1">Outline 1</option>
-							<option value="outline2">Outline 2</option>
-							<option value="outline3">Outline 3</option>
-							<option value="sharpen">Sharpen</option>
-						</select>
-
+					<select id="kernel1" style="display: block; margin: 3vh 0;">
+						<option value="" disabled>Efecto</option>
+						<option value="blur">Blur</option>
+						<option value="emboss">Emboss</option>
+						<option value="identity">Identity</option>
+						<option value="leftSobel">Left sobel</option>
+						<option value="rightSobel">Right sobel</option>
+						<option value="topSobel">Top sobel</option>
+						<option value="bottomSobel">Bottom sobel</option>
+						<option value="outline1">Outline 1</option>
+						<option value="outline2">Outline 2</option>
+						<option value="outline3">Outline 3</option>
+						<option value="sharpen">Sharpen</option>
+						<option value="avgRGB">average rgb</option>
+						<option value="luma240">luma 240</option>
+						<option value="luma601">luma 601</option>
+						<option value="luma709">luma 709</option>
+					</select>
 
 					<div>
 						<div id="image3" style="display: inline;"></div>
 						<div id="image4" style="display: inline;"></div>
 					</div>
 
+					<select id="kernel2" style="display: block; margin: 3vh 0;"></select>
+					<br>
+					<p style="text-align: justify;">
+						El objetivo principal de este taller es realizar operaciones para análisis de imágenes y videos,
+						en esta ocasión,
+						haciendo uso de la libreria para JavaScript "P5.js".
+					</p>
+					<p style="text-align: justify;">
+						En primera instancia hicimos la conversión a escala de grises de las imágenes en
+						tiempo real, esto lo hicimos de cuatro formas distintas average RGB, Luma 240, Luma 601 y Luma
+						709, en las
+						imágenes luego de aplicarse cualquiera de estas operaciones se puede apreciar un histograma que
+						muestra la frecuencia de los brillo de los pixeles en la imagen, se puede realizar la segmentación escogiendo
+						un rango sobre el histograma, aquí solo se mostrarán los pixeles que se encuentran dentro del
+						rango y los demás se dejaran de color blanco, esto mismo se realizó para las demás mascaras de
+						convolucion, mencionadas anteriormente.
+					</p>
+					<p style="text-align: justify;">
+						Para las operaciones realizadas en video, se puede medir su eficiencia computacional,
+						encontrandose en un promedio de fps en el video respectivo, el original y el alterado. El video original
+						cuenta con 60 fps nativos. Sin embargo, por las demas operaciones llevadas a cabo en la pagina, es probable
+						que no se llegue a ese promedio. Por otro lado, se observa una reduccion en el fps del video cuando pasa por
+						los filtros de convolucion. (Se debe dejar cargar un tiempo la pagina para que se pueda apreciar un comportamiento
+						normal en los videos)
+					</p>
 
-						<select id="kernel2" style="display: block; margin: 3vh 0;"></select>
+					<div>
+						<div id="video1" style="display: inherit;"></div>
+					</div>
+					<div>
+						<div id="video2" style="display: inline;"></div>
+					</div>
+
+					<select id="kernel3" style="display: block; margin: 3vh 0;"></select>
 
 				</center>
+				<h1 style="text-align: center">REFERENCIAS</h1>
+				<br>
+				<p>
+					Convoluciones y efectos:
+					<br>
+					<a href="https://es.wikipedia.org/wiki/Modelo_de_color_HSV">Modelo de color HSV</a>
+					<br>
+					<a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Disadvantages">HSL and HSV</a>
+					<br>
+					Histograma y segmentación
+					<br>
+					<a href="https://en.wikipedia.org/wiki/Image_histogram">Image histogram</a>
+					<br>
+					<a href="https://en.wikipedia.org/wiki/Image_segmentation">Image segmentation</a>
+					<br>
+					<a href="https://processing.org/examples/histogram.html">Processing histogram example</a>
+					<br>
+					<a href="https://www.analyticsvidhya.com/blog/2019/04/introduction-image-segmentation-techniques-python/">Segmentation</a>
+					<br>
+					<a href="https://es.wikipedia.org/wiki/M%C3%A9todo_del_valor_umbral">Método del valor umbral</a>
+                    
+				</p>
 
 				<script>
 					const imagePath1 = 'assets/Vd-Orig.png';
@@ -160,6 +278,10 @@
 					const imagePath3 = 'assets/Fire_breathing_2_Luc_Viatour.jpg';
 					const imageWidth3 = 800 * 0.5;
 					const imageHeight3 = 538 * 0.5;
+
+					const videoPath1 = 'assets/video_demo.mp4';
+					const videoWidth1 = 1280 * 0.5;
+					const videoHeight1 = 720 * 0.5;
 
 					new p5(s1(imagePath1, imageWidth1, imageHeight1), 'image1');
 					let image2 = new p5(s2(imagePath1, imageWidth1, imageHeight1), 'image2');
@@ -181,6 +303,18 @@
 						effect = kernels[inputKernel2.value];
 						image4.setup();
 					});
+
+					new p5(normalVideo(videoPath1, videoWidth1, videoHeight1), 'video1');
+					let video2 = new p5(fpsVideo(videoPath1, videoWidth1, videoHeight1), 'video2');
+
+					const inputKernel3 = document.getElementById('kernel3');
+
+					inputKernel3.innerHTML = inputKernel1.innerHTML;
+
+					inputKernel3.addEventListener('change', (event) => {
+						effect = kernels[inputKernel3.value];
+					});
+
 				</script>
 
 			</div> <!-- .cd-content -->
