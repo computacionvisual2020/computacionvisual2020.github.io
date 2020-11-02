@@ -3,7 +3,7 @@ const shader1 = (imgPath, imgWidth, imgHeight) => {
         let theShader;
 
         sketch.preload = () => {
-            theShader = sketch.loadShader('../shaders/vertex/shader1.vert', '../shaders/fragment/shader1.frag');
+            theShader = sketch.loadShader('shaders/vertex/shader1.vert', 'shaders/fragment/shader1.frag');
         }
 
         sketch.setup = () => {
