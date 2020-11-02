@@ -484,6 +484,25 @@
                         <br />
                         <h1 id="cafeShaders" style="text-align: center"> Cafe Wall Illusion Shaders</h1>
                         <br />
+                        <p style="text-align: justify;">
+                            La implementación mediante shaders para la ilusión de Cafe Wall se realizó con ayuda de los ejemplos expuestos en
+                            el libro "The Book of Shaders", adaptando a nuestra conveniencia diferentes funciones como, movingTiles, la cual se 
+                            encarga de dar movimiento, invirtiendo el sentido de cada fila intermedia, box, que se encarga de dibujar la cuadrícula y dar
+                            forma y espaciado a cada cuadrado, y finalmente, rotateTilePattern, donde se colorea cada cuadrado dependiendo de su posición en
+                            la cuadrícula. En cuanto al vertex shader, este se utiliza para centrar el dibujo en el canvas y administrar las dimensiones de
+                            renderizado.
+                            <br>
+                            <br>
+                            Gracias al desarrollo de esta ilusión, descubrimos que los fragment shaders nos brindan cierta libertad, que
+                            librerías como P5.js o el mismo processing no nos dan. Al experimentar con los ejemplos de "The Book of Shaders" y
+                            el desarrollo de esta ilusión, nos surgieron varias dudas con respecto al alcance que el manejo de fragment shaders 
+                            y eventualmente vertex shaders pueden brindarnos, para dar continuidad al desarrollo de programación visual.
+                            <br>
+                            <br>
+                            Siendo concretos, nuestro principal interés se centra en la implementación de los shaders en la creación de renderizados
+                            3D, asi tambien como Planar Patterns, ya que en el libro "The Book of shaders" a pesar de ser una fuente de aprendizaje verdaderamente útil,
+                            no logramos encontrar informacion de como desarrollar este tipo de implementaciones de shaders.
+                        </p>
                         <div>
                             <div id="shader" style="display: inline;"></div>
                         </div>
