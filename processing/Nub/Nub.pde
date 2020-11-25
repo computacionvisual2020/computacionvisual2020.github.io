@@ -8,59 +8,91 @@ PShader pixlightShader;
 
 int value = 1;
 
-int DIMENSION = 600;
+int DIMENSION = 1000;
 int MIDDLE = DIMENSION/2;
+Scene scene;
+Node n1,n2,n3,n4,n5;
 
 void settings() {
-  System.setProperty("jogl.disable.openglcore", "true");
   size(DIMENSION, DIMENSION, P3D);
 }
 
 void setup() {
   pixlightShader = loadShader("pixlightfrag.glsl", "pixlightvert.glsl");
+  scene = new Scene(this);
+  n1 = new Node();
+  n2 = new Node(n1){
+    // immediate mode rendering procedure
+    // defines n2 visual representation
+    @Override
+    public void graphics(PGraphics pg) {
+      pg.shader(pixlightShader);
+      pg.pointLight(255, 0, 0, 0, 0, 0);
+      //pg.pointLight(255, 255, 255, MIDDLE*cos(0.25), MIDDLE*sin(0.25), MIDDLE);
+      //pg.pointLight(255, 255, 255, MIDDLE*cos(0.5), MIDDLE*sin(0.5), MIDDLE);
+    }
+  };
+  n2.enableHint(Node.TORUS | Node.BULLSEYE | Node.AXES);
+  n2.translate(75, 75, 75);
+  n3 = new Node(n2){
+    // immediate mode rendering procedure
+    // defines n2 visual representation
+    @Override
+    public void graphics(PGraphics pg) {
+      pg.pointLight(0, 255, 0, 0, 0, 0);
+    }
+  };
+  n3.enableHint(Node.TORUS | Node.BULLSEYE | Node.AXES);
+  scene.randomize(n3);
+  n3.translate(50, 50, 50);
+  n4 = new Node(n3){
+    // immediate mode rendering procedure
+    // defines n2 visual representation
+    @Override
+    public void graphics(PGraphics pg) {
+      pg.pointLight(0, 0, 255, 0, 0, 0);
+    }
+  };
+  n4.enableHint(Node.TORUS | Node.BULLSEYE | Node.AXES);
+  scene.randomize(n4);
+  n4.translate(50, 50, 50);
+  n5 = new Node(n4){
+    // immediate mode rendering procedure
+    // defines n2 visual representation
+    @Override
+    public void graphics(PGraphics pg) {
+      pg.sphere(25);
+    }
+  };
+  n5.enableHint(Node.TORUS | Node.BULLSEYE | Node.AXES);
+  scene.randomize(n5);
+  n5.translate(50, 50, 50);
 }
 
-void draw() {    
+void draw() {   
   background(0);
-  
-  shader(pixlightShader);
-  
-  if (value>0){
-    pointLight(255, 255, 255, MIDDLE*cos(0), MIDDLE*sin(0), MIDDLE);
-  }
-  if (value>1){
-    pointLight(255, 125, 255, MIDDLE*cos(0.25*PI), MIDDLE*sin(0.25*PI), MIDDLE);
-  }
-  if (value>2){
-    pointLight(255, 255, 125, MIDDLE*cos(0.5*PI), MIDDLE*sin(0.5*PI), MIDDLE);
-  }
-  if (value>3){
-    pointLight(125, 255, 255, MIDDLE*cos(0.75*PI), MIDDLE*sin(0.75*PI), MIDDLE);
-  }
-  if (value>4){
-    pointLight(125, 125, 255, MIDDLE*cos(1.0*PI), MIDDLE*sin(1.0*PI), MIDDLE);
-  }
-  if (value>5){
-    pointLight(125, 255, 125, MIDDLE*cos(1.25*PI), MIDDLE*sin(1.25*PI), MIDDLE);
-  }
-  if (value>6){
-    pointLight(125, 125, 125, MIDDLE*cos(1.5*PI), MIDDLE*sin(1.5*PI), MIDDLE);
-  }
-  if (value>7){
-    pointLight(0, 255, 255, MIDDLE*cos(1.75*PI), MIDDLE*sin(1.75*PI), MIDDLE);
-  }
-
-  translate(width/2, height/2);
-  rotateY(angle); 
-  rotateX(angle);
-  box(200);
-  angle += 0.01;
+  scene.render();
 }
 
-void mouseClicked() {
-  if (value >= 8) {
-    value = 0;
-  } else {
-    value++;
-  }
+void mouseMoved() {
+  if (!scene.isTagValid("key"))
+    scene.mouseTag();
+}
+
+void mouseDragged() {
+  if (mouseButton == LEFT) {
+    if (!scene.mouseSpinTag("key"))
+      scene.mouseSpin();
+  } else if (mouseButton == RIGHT) {
+    if (!scene.mouseTranslateTag("key"))
+      scene.mouseTranslate();
+  } else
+    scene.scale(mouseX - pmouseX);
+}
+
+void mouseWheel(MouseEvent event) {
+  if (scene.is3D())
+    scene.moveForward(event.getCount() * 20);
+  else
+    scene.scaleEye(event.getCount() * 20);
 }
