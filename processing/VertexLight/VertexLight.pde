@@ -3,8 +3,12 @@ float angle;
 
 PShader lightShader;
 
-void setup() {
+void settings() {
+  System.setProperty("jogl.disable.openglcore", "true");
   size(640, 360, P3D);
+}
+
+void setup() {
   can = createCan(100, 200, 32);
   lightShader = loadShader("lightfrag.glsl", "lightvert.glsl");
 }
@@ -17,7 +21,8 @@ void draw() {
   pointLight(255, 255, 255, width/2, height, 200);
 
   translate(width/2, height/2);
-  rotateY(angle);  
+  rotateY(angle);
+  rotateX(angle);
   shape(can);  
   angle += 0.01;
 }
