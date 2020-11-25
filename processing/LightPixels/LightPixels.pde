@@ -3,6 +3,11 @@ float angle;
 
 PShader pixlightShader;
 
+int mode = 0;
+float ambientIntensity = 1.0;
+float diffuseIntesity = 1.0;
+float specularIntensity = 1.0;
+
 void settings() {
   System.setProperty("jogl.disable.openglcore", "true");
   size(640, 360, P3D);
@@ -16,14 +21,55 @@ void setup() {
 void draw() {    
   background(0);
   
+  pixlightShader.set("mode", mode);
+  pixlightShader.set("ambientIntensity", ambientIntensity);
+  pixlightShader.set("diffuseIntesity", diffuseIntesity);
+  pixlightShader.set("specularIntensity", specularIntensity);
+  
   shader(pixlightShader);
   
   pointLight(255, 255, 255, width/2, height, 200);
 
   translate(width/2, height/2);
-  rotateY(angle);  
+  rotateY(angle);
+  rotateX(angle);
   shape(can);  
   angle += 0.01;
+}
+
+void mouseClicked(){
+  if(mode == 2) {
+    mode = 0;
+  }else{
+    mode +=1;
+  }
+}
+
+void keyPressed() {
+  float k = (float(key) - 48) /10;
+  
+  if(mode == 0) {
+    if(k == 0.0){
+      ambientIntensity = 1.0;
+    } else {
+      ambientIntensity = k;
+    }
+  }
+  if(mode == 1) {
+    if(k == 0.0){
+      diffuseIntesity = 1.0;
+    } else {
+      diffuseIntesity = k;
+    }
+  }
+  if(mode == 2) {
+    if(k == 0.0){
+      specularIntensity = 1.0;
+    } else {
+      specularIntensity = k;
+    }
+  }
+
 }
 
 PShape createCan(float r, float h, int detail) {
