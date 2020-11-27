@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/project2.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/prism.css">
+	<script src="/js/prism.js"></script>
+
+	<title>Animated Page Transition #2 | CodyHouse</title>
+</head>
+
+<body>
+    <nav class="cd-side-navigation">
+        <ul>
+            <li>
+                <a href="#0" class="selected" data-menu="index">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <polygon fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" points="12,2 3,10 3,23 9,23 9,16 15,16 15,23 21,23 21,10 "
+                                stroke-linejoin="miter"></polygon>
+                        </g>
+                    </svg>
+                    Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="#0" data-menu="project1">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+                                stroke-linejoin="miter"></polyline>
+                            <rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+                            <line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+                            <line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+                        </g>
+                    </svg>
+                    Proyecto 1
+                </a>
+            </li>
+
+            <li>
+				<a href="#0" data-menu="project2">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+								stroke-linejoin="miter"></polyline>
+							<rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+						</g>
+					</svg>
+					Proyecto 2
+				</a>
+			</li>
+
+            <li>
+				<a href="#0" data-menu="project3">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+								stroke-linejoin="miter"></polyline>
+							<rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+						</g>
+					</svg>
+                    Proyecto 3
+                </a>
+            </li>
+
+            <li>
+                <a href="#0" data-menu="contact">
+                    <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <g transform="translate(0, 0)">
+                            <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" points=" 19,7 12,14 5,7 "
+                                stroke-linejoin="miter"></polyline>
+                            <rect x="1" y="3" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+                                stroke-miterlimit="10" width="22" height="18" stroke-linejoin="miter"></rect>
+                            <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" x1="7" y1="15" x2="5" y2="17"
+                                stroke-linejoin="miter"></line>
+                            <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+                                stroke-linecap="square" stroke-miterlimit="10" x1="17" y1="15" x2="19" y2="17"
+                                stroke-linejoin="miter"></line>
+                        </g>
+                    </svg>
+                    </svg>
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav> <!-- .cd-side-navigation -->
+
+	<main class="cd-main">
+		<section class="cd-section project1 visible">
+			<header>
+				<div class="cd-title">
+					<h2>Proyecto 3</h2>
+					<span>Taller de Iluminación</span>
+				</div>
+
+				<a href="#project3-content" class="cd-scroll">Scroll Down</a>
+			</header>
+
+			<div class="cd-content" id="project3-content">
+                <center>
+                <div class="container-table100">
+                    <div class="wrap-table100">
+                        <div class="table">
+                            <div class="row header">
+                                <div class="cell">
+                                    Iluminación
+                                </div>
+                                <div class="cell">
+                                    Tipo de interactividad
+                                </div>
+                                <div class="cell">
+                                    URL código base
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="cell" data-title="Ilusión">
+                                    <a href="#Fog">
+                                        Luz ambiental + Atenuación + Fog
+                                    </a>
+                                </div>
+                                <div class="cell" data-title="Tipo">
+                                    Click derecho para agregar iluminación
+                                    <br>
+                                    Numeros del 0 al 9 para modificar intensidad
+                                </div>
+                                <div class="cell" data-title="URL">
+                                    <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/tree/master/processing/FogInteractive">
+                                        Repositorio Github processing/FogInteractive
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="cell" data-title="Ilusión">
+                                    <a href="#Pixels">
+                                        Por pixeles: Ambiental + Difusión + Especular
+                                    </a>
+                                </div>
+                                <div class="cell" data-title="Tipo">
+                                    Click derecho para agregar iluminación
+                                    <br>
+                                    Numeros del 0 al 9 para modificar intensidad
+                                </div>
+                                <div class="cell" data-title="URL">
+                                    <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/tree/master/processing/LightPixels">
+                                        Repositorio Github processing/LightPixels
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="cell" data-title="Ilusión">
+                                    <a href="#Vertex">
+                                        Por vertices: Ambiental + Difusión + Especular
+                                    </a>
+                                </div>
+                                <div class="cell" data-title="Tipo">
+                                    No aplica
+                                </div>
+                                <div class="cell" data-title="URL">
+                                    <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/tree/master/processing/VertexLight">
+                                        Repositorio Github processing/VertexLigh
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="cell" data-title="Ilusión">
+                                    <a href="#Nub">
+                                        Fuentes de iluminación por nodos mediante Nub
+                                    </a>
+                                </div>
+                                <div class="cell" data-title="Tipo">
+                                    Click y mover el mouse
+                                </div>
+                                <div class="cell" data-title="URL">
+                                    <a href="https://github.com/computacionvisual2020/computacionvisual2020.github.io/tree/master/processing/Nub">
+                                        Repositorio Github processing/Nub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </center>
+                <h1 style="text-align: center">Ambient Light</h1>
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Fog/Ambient_Light.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+                <div style="text-align: justify;">
+					<p>
+                        La luz ambiental es una fuente de luz que proviene desde todos los puntos. 
+                        Es por esto que se ve el cilindro iluminado pese a que el fondo es oscuro. 
+                        En este caso no es necesario tener en cuenta el foco de luz ya que el cilindro obtiene luz desde todos sus vertices.
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 style="text-align: center">Attenuation Light</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Fog/Attenuation.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+                        La atenuación se le aplica a la luz ambiental y si requiere de un foco de luz para poder afectar al cilindro.
+                        Teniendo en cuenta el foco de luz, se calcula la distancia con el cilindro, tanto el que está estatico y el que gira.
+                        Podemos ver como el objeto se ve más oscuro a medida que se aleja del foco de luz.
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 id="Fog" style="text-align: center">Fog</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Fog/Fog.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+                        La niebla (Fog) se calcula teniendo en cuenta un indice de niebla y un color que tiene la misma. 
+                        En nuestro caso la niebla es de color oscuro, ya que el fondo es oscuro y es mejor apreciar así como a medida que hay más niebla, menos se ve el cilindro.
+                        Esta apreciación se logra al aumentar el indice de niebla con las teclas de los números.
+                    </p>
+                </div>
+
+                <br />
+
+                <h2 style="text-align: center">Fragment Shader</h2>
+
+                <br />
+
+                    <div style="text-align: justify;">
+                        <p>
+                            En el Fragment Shader tenemos algunas variables que desde el processing enviamos, estas variables son las que nos determinan el modo en que se ve
+                            la figura y en algunos casos la intensidad de dicha luz o efecto. El modo 1 es el de solo luz ambiental, donde podemos seleccionar la intensidad de 
+                            la luz. El modod 2 es luz ambiental +  atenuación de la luz, donde podemos también determinar con los números del teclado la intensidad de la 
+                            atenuación. Finalmente el modo 3 es la suma de la luz ambiental, la atenuación y la niebla, en este caso con el teclado podemos determinar que tanta 
+                            niebla va a haber.
+                        </p>
+
+                        <br />
+
+                        <div style="display: flex; justify-content: center;">
+                            <pre>
+                                <code class="language-glsl">
+#ifdef GL_ES
+precision mediump float;
+precision mediump int;
+#endif
+
+varying vec4 vertColor;
+varying vec3 vertPos;
+
+uniform vec4 lightPosition;
+uniform float mode;
+uniform float fogAmount;
+uniform float atenuattionIntensity;
+uniform float ambientStrength;
+
+void main()
+{
+    vec3 ambient = ambientStrength * vec3(1.0, 0.0, 1.0); // color de la luz
+
+    vec3 to_light = lightPosition.xyz - vertPos;
+    float d = length(to_light);
+    float attenuation = clamp(100.0/d, atenuattionIntensity, 1.0);
+
+    vec3 result = ambient * vec3(1.0, 1.0, 1.0) * attenuation; // color del cilindro
+
+    gl_FragColor = mix(vec4(result, 1.0), vec4(0.0, 0.0, 0.0, 0.0), fogAmount);
+
+    // Ambient mode
+    if(mode == 0) gl_FragColor = vec4(ambient * vec3(1.0, 1.0, 1.0) , 1.0);
+
+    // Attenuation mode
+    if(mode == 1) gl_FragColor = gl_FragColor = vec4(result, 1.0);
+
+    //gl_FragColor = vec4(result, 1.0);
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                
+                    <br />
+
+                    <h2 style="text-align: center">Vertex Shader</h2>
+                    
+                    <br />
+
+                        <div style="text-align: justify;">
+                            <p>
+                                Desde el Vertex Shader únicamente pasamos los datos de ubicación de los vertices, para que luego en el fragment shader se pueda
+                                calcular por pixel.
+                            </p>
+                            
+                            <br />
+
+                            <div style="display: flex; justify-content: center;">
+                                <pre>
+                                    <code class="language-glsl">
+uniform mat4 transform;
+uniform mat4 modelview;
+uniform mat3 normalMatrix;
+
+attribute vec4 position;
+attribute vec4 color;
+
+varying vec4 vertColor;
+varying vec3 vertPos;
+
+attribute vec3 normal;
+
+void main() {
+    vec4 vertPos4 = modelview * position;
+    vertPos = vec3(vertPos4) / vertPos4.w;
+    gl_Position = transform * position;  
+}
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <br />
+
+                        <div style="display: flex; justify-content: center;">
+                            <video autoplay loop><source src="/assets/Fog/Fog_Interactive.mp4" type="video/mp4"></video>
+                        </div>
+
+                        <br />
+                        <br />
+                        <br />
+
+                <h1 style="text-align: center">Diffuse Light</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Lights/Diffuse.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+                        La reflexión difusa es la reflexión de la luz u otras ondas o partículas de una superficie, 
+                        de modo que un rayo que incide en la superficie se dispersa en muchos ángulos en lugar de en un solo ángulo
+                        Se dice que una superficie reflectante difusa ideal exhibe una reflexión lambertiana , 
+                        lo que significa que hay una luminancia igual cuando se ve desde todas las direcciones que se encuentran en el espacio intermedio adyacente a la superficie.
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 style="text-align: center">Specular Light</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Lights/Specular.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+						La reflexión especular, es la reflexión similar a un espejo de ondas , como la luz , de una superficie.
+                        La ley de la reflexión establece que un rayo de luz reflejado emerge de la superficie reflectante en el mismo ángulo a la superficie normal que el rayo incidente, 
+                        pero en el lado opuesto de la superficie normal en el plano formado por los rayos incidente y reflejado.
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 id="Pixels" style="text-align: center">Pixels Lightning</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Lights/PixelsLight.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+                    <p>
+                        La reflexión de Phong es un modelo empírico de iluminación local. 
+                        Describe la forma en que una superficie refleja la luz como una combinación del reflejo difuso de superficies rugosas con el reflejo especular de superficies brillantes. 
+                        Se basa en la observación informal de Phong de que las superficies brillantes tienen pequeños reflejos especulares intensos, 
+                        mientras que las superficies opacas tienen grandes reflejos que caen más gradualmente. 
+                        El modelo también incluye un término ambiental para dar cuenta de la pequeña cantidad de luz que se dispersa por toda la escena.
+                    </p>
+                </div>
+
+                <br />
+
+                <h2 style="text-align: center">Fragment Shader</h2>
+
+                <br />
+
+                    <div style="text-align: justify;">
+                        <p>
+                            En el Fragment Shader se cuenta con diferentes variables uniformes, estas variables son las que nos determinan el modo en que se ve
+                            la figura y en algunos casos la intensidad de dicha luz o efecto. Se cambia entre los diferentes modos al dar click sobre el canvas. 
+                            El modo 1 es el de solo luz ambiental, donde tambien se puede seleccionar la intensidad de 
+                            la luz mediante el teclado numérico, de 0 a 9. El modo 2 es luz ambiental +  la difusión, donde también se puede determinar la intensidad.
+                            Finalmente el modo 3 es la suma de la luz ambiental, la difusión y la reflexión especular, donde igualemnte se puede regular la intensidad.
+                        </p>
+
+                        <br />
+
+                        <div style="display: flex; justify-content: center;">
+                            <pre>
+                                <code class="language-glsl">
+#ifdef GL_ES
+precision mediump float;
+precision mediump int;
+#endif
+varying vec4 vertColor;
+varying vec3 cameraDirection;
+varying vec3 lightDirectionReflected;
+
+varying vec3 normalInterp;
+varying vec3 vertPos;
+
+uniform vec4 lightPosition;
+uniform int mode;
+uniform float ambientIntensity;
+uniform float diffuseIntesity;
+uniform float specularIntensity;
+
+void main() {
+
+    vec3 N = normalize(normalInterp);
+    vec3 L = normalize(lightPosition.xyz - vertPos);
+
+    // Lambert cosine law
+    float lambertian = max(dot(N,L), 0.0);
+    float specular = 0.0;
+    if(lambertian > 0.0) {
+        vec3 R = reflect(-L, N);
+        vec3 V = normalize(-vertPos);
+
+        float specAngle = max(dot(R,V), 0.0);
+        specular = pow(specAngle, 80.0);
+    }
+
+    gl_FragColor = vec4(ambientIntensity * vec3(0.5, 0.15, 0.0) 
+                    + diffuseIntesity * lambertian * vec3(1.0, 0.0, 1.0) 
+                    + specularIntensity * specular * vec3(0.0, 1.0, 0.0), 1.0);
+
+    // Only ambient
+    if(mode == 0) gl_FragColor = vec4(ambientIntensity * vec3(0.5, 0.15, 0.0), 1.0);
+
+    // With Diffuse
+    if(mode == 1) gl_FragColor = vec4(ambientIntensity * vec3(0.5, 0.15, 0.0) 
+                                + diffuseIntesity * lambertian * vec3(1.0, 0.0, 1.0), 1.0);
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                
+                    <br />
+
+                    <h2 style="text-align: center">Vertex Shader</h2>
+                    
+                    <br />
+
+                        <div style="text-align: justify;">
+                            <p>
+                                Desde el Vertex Shader únicamente pasamos los datos de ubicación de los vertices, para que luego en el fragment shader se pueda
+                                calcular por pixel.
+                            </p>
+                            
+                            <br />
+
+                            <div style="display: flex; justify-content: center;">
+                                <pre>
+                                    <code class="language-glsl">
+uniform mat4 modelview;
+uniform mat4 transform;
+uniform mat3 normalMatrix;
+
+varying vec3 vertPos;
+varying vec3 normalInterp;
+
+attribute vec4 position;
+attribute vec3 normal;
+
+void main() {
+
+    vec4 vertPos4 = modelview * position;
+    vertPos = vec3(vertPos4) / vertPos4.w;
+    normalInterp = vec3(normalMatrix * normal);
+    gl_Position = transform * position;    
+    
+}
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <br />
+
+                <h1 id="Vertex" style="text-align: center">Vertex Lightning</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Lights/Vertex.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+                        Se especifica una estimación de la normal de superficie de cada vértice en un modelo poligonal 3D para cada vértice 
+                        o se calcula promediando las normales de superficie de los polígonos que se encuentran en cada vértice. 
+                        Usando estas estimaciones, se realizan cálculos de iluminación basados ​​en un modelo de reflexión, 
+                        para producir intensidades de color en los vértices.
+                    </p>
+                </div>
+
+                <br />
+
+                <h2 style="text-align: center">Fragment Shader</h2>
+
+                <br />
+
+                    <div style="text-align: justify;">
+                        <div style="display: flex; justify-content: center;">
+                            <pre>
+                                <code class="language-glsl">
+varying vec4 vertColor;
+
+void main() {
+    gl_FragColor = vertColor;
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                
+                    <br />
+
+                    <h2 style="text-align: center">Vertex Shader</h2>
+                    
+                    <br />
+
+                        <div style="text-align: justify;">
+                            <div style="display: flex; justify-content: center;">
+                                <pre>
+                                    <code class="language-glsl">
+uniform mat4 modelview;
+uniform mat4 transform;
+uniform mat3 normalMatrix;
+uniform vec4 lightPosition;
+
+// Testing
+
+varying vec3 normalInterp;
+varying vec3 vertPos;
+
+// fin Testing
+
+attribute vec4 position;
+attribute vec4 color;
+attribute vec3 normal;
+
+varying vec4 vertColor;
+
+void main() {
+
+    vec4 vertPos4 = modelview * position;
+    vertPos = vec3(vertPos4) / vertPos4.w;
+    normalInterp = vec3(normalMatrix * normal);
+    gl_Position = transform * position; 
+
+    vec3 N = normalize(normalInterp);
+    vec3 L = normalize(lightPosition.xyz - vertPos);
+
+    float lambertian = max(dot(N,L), 0.0);
+    float specular = 0.0;
+
+    if(lambertian > 0.0) {
+        vec3 R = reflect(-L, N);
+        vec3 V = normalize(-vertPos);
+
+        float specAngle = max(dot(R,V), 0.0);
+        specular = pow(specAngle, 80.0);
+    }
+
+    vertColor = vec4(1.0 * vec3(0.5, 0.15, 0.0) + 1.0 * lambertian + 1.0 * specular, 1.0);             
+}
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <br />
+
+                <h1 id="Nub" style="text-align: center">Nub Node Light</h1>
+
+                <div style="display: flex; justify-content: center;">
+                    <video width="60%" autoplay loop><source src="/assets/nub.mp4" type="video/mp4"></video>
+                </div>
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+                        Para el punto de nodos se utilizó la librería de Processing Nub. 
+                        El proceso consistió en implementar un nodo raíz vacío del que partirían los nodos contenedores de las funciones de luz de Processing y el objeto expuesto a la luz. 
+                        Al realizar el árbol de nodos se observó que, si el shader no estaba en un nivel de jerarquía superior al nodo del objeto, este no se observaba. 
+                        Además, una vez se realizó lo anterior, se observó que el objeto no identificaba las fuentes de luz si los nodos correspondientes no estaban -al igual que el shader- en un nivel superior al nodo objeto. 
+                        Por ende, se terminó realizando un árbol de padres e hijos únicos por nivel, todos conectados comenzando por el shader y finalizando por el objeto. La forma de 3 luces fue N1 -> N2 -> N3 -> N4 –> N5 donde N1 es el nodo vacío raíz, N2-4 son luces y el 2 contiene el shader y N5 es el objeto. 
+                        Con esta implementación se podían reorientar los nodos y moverse por el espacio de coordenadas libremente para ubicar el objeto y las luces a disposición del usuario. 
+                        También se modificó el shader de las implementaciones previas para que iterara según la cantidad de fuentes de luz, el código de Processing está en el archivo nub. 
+                        El archivo nub2 fue un ejemplo del número de luces permitidas por Processing sobre un objeto, sin usar nodos.
+                    </p>
+                </div>
+
+                    <div style="text-align: justify;">
+                        <div style="display: flex; justify-content: center;">
+                            <pre>
+                                <code class="language-glsl">
+  
+import nub.primitives.*;
+import nub.core.*;
+import nub.processing.*;
+PShape can;
+float angle;
+
+PShader pixlightShader;
+
+int value = 1;
+
+int DIMENSION = 1000;
+int MIDDLE = DIMENSION/2;
+Scene scene;
+Node n1,n2,n3,n4,n5;
+
+void settings() {
+  size(DIMENSION, DIMENSION, P3D);
+}
+
+void setup() {
+  pixlightShader = loadShader("pixlightfrag.glsl", "pixlightvert.glsl");
+  scene = new Scene(this);
+  n1 = new Node();
+  n2 = new Node(n1){
+    // immediate mode rendering procedure
+    // defines n2 visual representation
+    @Override
+    public void graphics(PGraphics pg) {
+      pg.shader(pixlightShader);
+      pg.pointLight(255, 0, 0, 0, 0, 0);
+      //pg.pointLight(255, 255, 255, MIDDLE*cos(0.25), MIDDLE*sin(0.25), MIDDLE);
+      //pg.pointLight(255, 255, 255, MIDDLE*cos(0.5), MIDDLE*sin(0.5), MIDDLE);
+    }
+  };
+  n2.enableHint(Node.TORUS | Node.BULLSEYE | Node.AXES);
+  n2.translate(75, 75, 75);
+  n3 = new Node(n2){
+    // immediate mode rendering procedure
+    // defines n2 visual representation
+    @Override
+    public void graphics(PGraphics pg) {
+      pg.pointLight(0, 255, 0, 0, 0, 0);
+    }
+  };
+  n3.enableHint(Node.TORUS | Node.BULLSEYE | Node.AXES);
+  scene.randomize(n3);
+  n3.translate(50, 50, 50);
+  n4 = new Node(n3){
+    // immediate mode rendering procedure
+    // defines n2 visual representation
+    @Override
+    public void graphics(PGraphics pg) {
+      pg.pointLight(0, 0, 255, 0, 0, 0);
+    }
+  };
+  n4.enableHint(Node.TORUS | Node.BULLSEYE | Node.AXES);
+  scene.randomize(n4);
+  n4.translate(50, 50, 50);
+  n5 = new Node(n4){
+    // immediate mode rendering procedure
+    // defines n2 visual representation
+    @Override
+    public void graphics(PGraphics pg) {
+      pg.sphere(25);
+    }
+  };
+  n5.enableHint(Node.TORUS | Node.BULLSEYE | Node.AXES);
+  scene.randomize(n5);
+  n5.translate(50, 50, 50);
+}
+
+void draw() {   
+  background(0);
+  scene.render();
+}
+
+void mouseMoved() {
+  if (!scene.isTagValid("key"))
+    scene.mouseTag();
+}
+
+void mouseDragged() {
+  if (mouseButton == LEFT) {
+    if (!scene.mouseSpinTag("key"))
+      scene.mouseSpin();
+  } else if (mouseButton == RIGHT) {
+    if (!scene.mouseTranslateTag("key"))
+      scene.mouseTranslate();
+  } else
+    scene.scale(mouseX - pmouseX);
+}
+
+void mouseWheel(MouseEvent event) {
+  if (scene.is3D())
+    scene.moveForward(event.getCount() * 20);
+  else
+    scene.scaleEye(event.getCount() * 20);
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
+			</div> <!-- .cd-content -->
+		</section> <!-- .cd-section -->
+	</main> <!-- .cd-main -->
+
+	<div id="cd-loading-bar" data-scale="1" class="project1"></div> <!-- lateral loading bar -->
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+
+</html>
