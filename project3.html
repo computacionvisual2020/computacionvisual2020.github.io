@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/project1.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+	<script src="p5/sketch1.js"></script>
+    <script src="p5/taller1_video.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/prism.css">
+	<script src="/js/prism.js"></script>
+
+	<title>Animated Page Transition #2 | CodyHouse</title>
+</head>
+
+<body>
+	<nav class="cd-side-navigation">
+		<ul>
+			<li>
+				<a href="#0" data-menu="index">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polygon fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" points="12,2 3,10 3,23 9,23 9,16 15,16 15,23 21,23 21,10 "
+								stroke-linejoin="miter"></polygon>
+						</g>
+					</svg>
+					Intro
+				</a>
+			</li>
+
+			<li>
+				<a class="selected" href="#0" data-menu="project1">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+								stroke-linejoin="miter"></polyline>
+							<rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+						</g>
+					</svg>
+					Proyecto 1
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" data-menu="project2">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 "
+								stroke-linejoin="miter"></polyline>
+							<rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="5" y1="7" x2="5" y2="22" stroke-linejoin="miter"></line>
+							<line fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" x1="19" y1="7" x2="19" y2="22" stroke-linejoin="miter"></line>
+						</g>
+					</svg>
+					Proyecto 2
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" data-menu="projects">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<rect x="1" y="1" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="22" stroke-linejoin="miter"></rect>
+							<rect data-color="color-2" x="5" y="5" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+								stroke-linejoin="miter"></rect>
+							<rect data-color="color-2" x="14" y="5" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+								stroke-linejoin="miter"></rect>
+							<rect data-color="color-2" x="5" y="14" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+								stroke-linejoin="miter"></rect>
+							<rect data-color="color-2" x="14" y="14" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" width="5" height="5"
+								stroke-linejoin="miter"></rect>
+						</g>
+					</svg>
+					Projects
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" data-menu="contact">
+					<svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+						viewBox="0 0 24 24">
+						<g transform="translate(0, 0)">
+							<polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" points=" 19,7 12,14 5,7 "
+								stroke-linejoin="miter"></polyline>
+							<rect x="1" y="3" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square"
+								stroke-miterlimit="10" width="22" height="18" stroke-linejoin="miter"></rect>
+							<line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" x1="7" y1="15" x2="5" y2="17"
+								stroke-linejoin="miter"></line>
+							<line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2"
+								stroke-linecap="square" stroke-miterlimit="10" x1="17" y1="15" x2="19" y2="17"
+								stroke-linejoin="miter"></line>
+						</g>
+					</svg>
+					</svg>
+					Contact
+				</a>
+			</li>
+		</ul>
+	</nav> <!-- .cd-side-navigation -->
+
+	<main class="cd-main">
+		<section class="cd-section project1 visible">
+			<header>
+				<div class="cd-title">
+					<h2>Proyecto 3</h2>
+					<span>Taller de Iluminación</span>
+				</div>
+
+				<a href="#project3-content" class="cd-scroll">Scroll Down</a>
+			</header>
+
+			<div class="cd-content" id="project3-content">
+                <h1 style="text-align: center">Ambient Light</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Fog/Ambient_Light.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+                <div style="text-align: justify;">
+					<p>
+                        La luz ambiental es una fuente de luz que proviene desde todos los puntos. 
+                        Es por esto que se ve el cilindro iluminado pese a que el fondo es oscuro. 
+                        En este caso no es necesario tener en cuenta el foco de luz ya que el cilindro obtiene luz desde todos sus vertices.
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 style="text-align: center">Attenuation Light</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Fog/Attenuation.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+                        La atenuación se le aplica a la luz ambiental y si requiere de un foco de luz para poder afectar al cilindro.
+                        Teniendo en cuenta el foco de luz, se calcula la distancia con el cilindro, tanto el que está estatico y el que gira.
+                        Podemos ver como el objeto se ve más oscuro a medida que se aleja del foco de luz.
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 style="text-align: center">Fog</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Fog/Fog.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+                        La niebla (Fog) se calcula teniendo en cuenta un indice de niebla y un color que tiene la misma. 
+                        En nuestro caso la niebla es de color oscuro, ya que el fondo es oscuro y es mejor apreciar así como a medida que hay más niebla, menos se ve el cilindro.
+                        Esta apreciación se logra al aumentar el indice de niebla con las teclas de los números.
+                    </p>
+                </div>
+
+                <br />
+
+                <h2 style="text-align: center">Fragment Shader</h2>
+
+                <br />
+
+                    <div style="text-align: justify;">
+                        <p>
+                            En el Fragment Shader tenemos algunas variables que desde el processing enviamos, estas variables son las que nos determinan el modo en que se ve
+                            la figura y en algunos casos la intensidad de dicha luz o efecto. El modo 1 es el de solo luz ambiental, donde podemos seleccionar la intensidad de 
+                            la luz. El modod 2 es luz ambiental +  atenuación de la luz, donde podemos también determinar con los números del teclado la intensidad de la 
+                            atenuación. Finalmente el modo 3 es la suma de la luz ambiental, la atenuación y la niebla, en este caso con el teclado podemos determinar que tanta 
+                            niebla va a haber.
+                        </p>
+
+                        <br />
+
+                        <div style="display: flex; justify-content: center;">
+                            <pre>
+                                <code class="language-glsl">
+#ifdef GL_ES
+precision mediump float;
+precision mediump int;
+#endif
+
+varying vec4 vertColor;
+varying vec3 vertPos;
+
+uniform vec4 lightPosition;
+uniform float mode;
+uniform float fogAmount;
+uniform float atenuattionIntensity;
+uniform float ambientStrength;
+
+void main()
+{
+    vec3 ambient = ambientStrength * vec3(1.0, 0.0, 1.0); // color de la luz
+
+    vec3 to_light = lightPosition.xyz - vertPos;
+    float d = length(to_light);
+    float attenuation = clamp(100.0/d, atenuattionIntensity, 1.0);
+
+    vec3 result = ambient * vec3(1.0, 1.0, 1.0) * attenuation; // color del cilindro
+
+    gl_FragColor = mix(vec4(result, 1.0), vec4(0.0, 0.0, 0.0, 0.0), fogAmount);
+
+    // Ambient mode
+    if(mode == 0) gl_FragColor = vec4(ambient * vec3(1.0, 1.0, 1.0) , 1.0);
+
+    // Attenuation mode
+    if(mode == 1) gl_FragColor = gl_FragColor = vec4(result, 1.0);
+
+    //gl_FragColor = vec4(result, 1.0);
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                
+                    <br />
+
+                    <h2 style="text-align: center">Vertex Shader</h2>
+                    
+                    <br />
+
+                        <div style="text-align: justify;">
+                            <p>
+                                Desde el Vertex Shader únicamente pasamos los datos de ubicación de los vertices, para que luego en el fragment shader se pueda
+                                calcular por pixel.
+                            </p>
+                            
+                            <br />
+
+                            <div style="display: flex; justify-content: center;">
+                                <pre>
+                                    <code class="language-glsl">
+uniform mat4 transform;
+uniform mat4 modelview;
+uniform mat3 normalMatrix;
+
+attribute vec4 position;
+attribute vec4 color;
+
+varying vec4 vertColor;
+varying vec3 vertPos;
+
+attribute vec3 normal;
+
+void main() {
+    vec4 vertPos4 = modelview * position;
+    vertPos = vec3(vertPos4) / vertPos4.w;
+    gl_Position = transform * position;  
+}
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <br />
+
+                        <div style="display: flex; justify-content: center;">
+                            <video autoplay loop><source src="/assets/Fog/Fog_Interactive.mp4" type="video/mp4"></video>
+                        </div>
+
+                        <br />
+                        <br />
+                        <br />
+
+                <h1 style="text-align: center">Diffuse Light</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Lights/Diffuse.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+						El núcleo (kernel) de imagen es una matriz que se utiliza para aplicar efectos sobre un archivo
+						base. Los efectos pueden ser desenfocar, afilar, delinear, o grabar en relieve, entre otros.
+						También se utilizan en el aprendizaje automático para la extracción de características en la
+						imagen. En dicho proceso se conoce como “convolución”. Convolución es el proceso de agregar cada
+						elemento de la imagen a sus vecinos locales, ponderados por el núcleo. Esto está relacionado con
+						una forma de convolución matemática.
+						<br>
+						Algunos de los efectos consisten en:
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 style="text-align: center">Specular Light</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Lights/Specular.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+						El núcleo (kernel) de imagen es una matriz que se utiliza para aplicar efectos sobre un archivo
+						base. Los efectos pueden ser desenfocar, afilar, delinear, o grabar en relieve, entre otros.
+						También se utilizan en el aprendizaje automático para la extracción de características en la
+						imagen. En dicho proceso se conoce como “convolución”. Convolución es el proceso de agregar cada
+						elemento de la imagen a sus vecinos locales, ponderados por el núcleo. Esto está relacionado con
+						una forma de convolución matemática.
+						<br>
+						Algunos de los efectos consisten en:
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 style="text-align: center">Pixels Lightning</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Lights/PixelsLight.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+						El núcleo (kernel) de imagen es una matriz que se utiliza para aplicar efectos sobre un archivo
+						base. Los efectos pueden ser desenfocar, afilar, delinear, o grabar en relieve, entre otros.
+						También se utilizan en el aprendizaje automático para la extracción de características en la
+						imagen. En dicho proceso se conoce como “convolución”. Convolución es el proceso de agregar cada
+						elemento de la imagen a sus vecinos locales, ponderados por el núcleo. Esto está relacionado con
+						una forma de convolución matemática.
+						<br>
+						Algunos de los efectos consisten en:
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 style="text-align: center">Vertex Lightning</h1>
+
+                <br />
+
+                <div style="display: flex; justify-content: center;">
+                    <video autoplay loop><source src="/assets/Lights/Vertex.mp4" type="video/mp4"></video>
+                </div>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+						El núcleo (kernel) de imagen es una matriz que se utiliza para aplicar efectos sobre un archivo
+						base. Los efectos pueden ser desenfocar, afilar, delinear, o grabar en relieve, entre otros.
+						También se utilizan en el aprendizaje automático para la extracción de características en la
+						imagen. En dicho proceso se conoce como “convolución”. Convolución es el proceso de agregar cada
+						elemento de la imagen a sus vecinos locales, ponderados por el núcleo. Esto está relacionado con
+						una forma de convolución matemática.
+						<br>
+						Algunos de los efectos consisten en:
+                    </p>
+                </div>
+
+                <br />
+
+                <h1 style="text-align: center">Nub Node Light</h1>
+
+                <br />
+
+                <div style="text-align: justify;">
+					<p>
+                        Para el punto de nodos se utilizó la librería de Processing Nub. 
+                        El proceso consistió en implementar un nodo raíz vacío del que partirían los nodos contenedores de las funciones de luz de Processing y el objeto expuesto a la luz. 
+                        Al realizar el árbol de nodos se observó que, si el shader no estaba en un nivel de jerarquía superior al nodo del objeto, este no se observaba. 
+                        Además, una vez se realizó lo anterior, se observó que el objeto no identificaba las fuentes de luz si los nodos correspondientes no estaban -al igual que el shader- en un nivel superior al nodo objeto. 
+                        Por ende, se terminó realizando un árbol de padres e hijos únicos por nivel, todos conectados comenzando por el shader y finalizando por el objeto. La forma de 3 luces fue N1 -> N2 -> N3 -> N4 –> N5 donde N1 es el nodo vacío raíz, N2-4 son luces y el 2 contiene el shader y N5 es el objeto. 
+                        Con esta implementación se podían reorientar los nodos y moverse por el espacio de coordenadas libremente para ubicar el objeto y las luces a disposición del usuario. 
+                        También se modificó el shader de las implementaciones previas para que iterara según la cantidad de fuentes de luz, el código de Processing está en el archivo nub. 
+                        El archivo nub2 fue un ejemplo del número de luces permitidas por Processing sobre un objeto, sin usar nodos.
+                    </p>
+                </div>
+
+                <br />
+
+				<h1 style="text-align: center">REFERENCIAS</h1>
+				<br>
+				<p>
+					Convoluciones y efectos:
+					<br>
+					<a href="https://es.wikipedia.org/wiki/Modelo_de_color_HSV">Modelo de color HSV</a>
+					<br>
+					<a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Disadvantages">HSL and HSV</a>
+					<br>
+					Histograma y segmentación
+					<br>
+					<a href="https://en.wikipedia.org/wiki/Image_histogram">Image histogram</a>
+					<br>
+					<a href="https://en.wikipedia.org/wiki/Image_segmentation">Image segmentation</a>
+					<br>
+					<a href="https://processing.org/examples/histogram.html">Processing histogram example</a>
+					<br>
+					<a href="https://www.analyticsvidhya.com/blog/2019/04/introduction-image-segmentation-techniques-python/">Segmentation</a>
+					<br>
+					<a href="https://es.wikipedia.org/wiki/M%C3%A9todo_del_valor_umbral">Método del valor umbral</a>
+                    
+				</p>
+
+			</div> <!-- .cd-content -->
+		</section> <!-- .cd-section -->
+	</main> <!-- .cd-main -->
+
+	<div id="cd-loading-bar" data-scale="1" class="project1"></div> <!-- lateral loading bar -->
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+
+</html>
