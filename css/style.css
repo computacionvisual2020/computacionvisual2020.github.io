@@ -441,10 +441,13 @@ Navigation
 #cd-loading-bar.project1 {
   background-color: #d35657;
 }
-#cd-loading-bar.projects {
+#cd-loading-bar.project2 {
   background-color: #343943;
 }
-#cd-loading-bar.contact {
+#cd-loading-bar.project3 {
+  background-color: #d35657;
+}
+#cd-loading-bar.projectFinal {
   background-color: #e4b162;
 }
 #cd-loading-bar.loading {
@@ -454,4 +457,11 @@ Navigation
   #cd-loading-bar {
     left: 90px;
   }
+}
+
+.observable{
+  /* position: relative; */
+  width: 50vw;
+  /* height: 70vh; */
+  margin: 0 auto 2em;
 }
